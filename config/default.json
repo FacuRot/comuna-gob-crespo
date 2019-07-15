@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://facu123:facu123@clustercomuna-cgwsp.mongodb.net/test?retryWrites=true&w=majority"
+}
