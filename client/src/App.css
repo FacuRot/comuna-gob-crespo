@@ -1,0 +1,297 @@
+:root {
+  --primary-color: #17a2b8;
+  --dark-color: #343a40;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  background-image: linear-gradient(to right, #004a98, #0c84c7);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* Utilities */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+}
+
+/* Text Styles*/
+.x-large {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.large {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Padding */
+.p {
+  padding: 0.5rem;
+}
+.p-1 {
+  padding: 1rem;
+}
+.p-2 {
+  padding: 2rem;
+}
+.p-3 {
+  padding: 3rem;
+}
+.py {
+  padding: 0.5rem 0;
+}
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+
+/* Margin */
+.m {
+  margin: 0.5rem;
+}
+.m-1 {
+  margin: 1rem;
+}
+.m-2 {
+  margin: 2rem;
+}
+.m-3 {
+  margin: 3rem;
+}
+.my {
+  margin: 0.5rem 0;
+}
+.my-1 {
+  margin: 1rem 0;
+}
+.my-2 {
+  margin: 2rem 0;
+}
+.my-3 {
+  margin: 3rem 0;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(to right, #4c316d, #8f5e95);
+  color: whitesmoke;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.bg-gradient {
+  background-image: linear-gradient(to right, #004a98, #0c84c7);
+}
+
+.alert {
+  padding: 0.8rem;
+  margin: 1rem 0;
+  margin-top: 3.5rem;
+  opacity: 0.9;
+  background: var(--light-color);
+  color: #333;
+}
+
+.alert-danger {
+  background: var(--danger-color);
+  color: #fff;
+}
+
+/* Forms */
+.form .form-group {
+  margin: 1.2rem 0;
+}
+
+.form .form-text {
+  display: block;
+  margin-top: 0.3rem;
+  color: #888;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="date"],
+.form select,
+.form textarea {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+
+.form input[type="submit"],
+button {
+  font: inherit;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0rem 1rem;
+  padding-bottom: 0.2rem;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+}
+
+.navbar div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar a {
+  color: #fff;
+  padding: 0.45rem;
+  margin: 0 0.25rem;
+}
+
+.navbar a:hover {
+  color: var(--primary-color);
+}
+
+.navbar .welcome span {
+  margin-right: 0.6rem;
+}
+
+.navbar p {
+  color: #fff;
+  margin-right: 0.25rem;
+  padding-right: 0.45rem;
+}
+
+/* Landing Page */
+.landing {
+  position: relative;
+  height: 100vh;
+}
+
+/* Iconsbar */
+.iconsbar {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.iconsbar section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.2s ease-in;
+
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.iconsbar section:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+}
+
+/* Mobile Styles */
+@media (max-width: 700px) {
+  /* Navbar */
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .navbar p {
+    display: none;
+  }
+
+  .navbar ul {
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .navbar ul li a {
+    font-size: 10px;
+  }
+
+  /* Iconsbar */
+  .iconsbar section p {
+    font-size: 10px;
+  }
+  .icon {
+    width: 45px;
+    height: 45px;
+  }
+}
