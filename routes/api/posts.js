@@ -20,6 +20,9 @@ router.post(
     [
       check("text", "El cuerpo de la noticia no puede estar vacio")
         .not()
+        .isEmpty(),
+      check("title", "El titulo de la noticia no pede estar vacio")
+        .not()
         .isEmpty()
     ]
   ],
@@ -42,7 +45,9 @@ router.post(
       }
 
       const newPost = new Post({
+        title: req.body.title,
         text: req.body.text,
+        font: req.body.font,
         name: user.name,
         avatar: user.avatar,
         user: req.user.id,
@@ -184,7 +189,9 @@ router.delete("/comment/:id/:comment_id", auth, async (req, res) => {
     const post = await Post.findById(req.params.id);
 
     // Pull out comment
-    const comment = post.comments.find(comment => comment.id === req.params.comment_id);
+    const comment = post.comments.find(
+      comment => comment.id === req.params.comment_id
+    );
 
     // Make sure comment exists
     if (!comment) {
@@ -192,14 +199,15 @@ router.delete("/comment/:id/:comment_id", auth, async (req, res) => {
     }
 
     // Get remove index
-    const removeIndex = post.comments.map(comment => comment.id.toString()).indexOf(req.params.comment_id);
+    const removeIndex = post.comments
+      .map(comment => comment.id.toString())
+      .indexOf(req.params.comment_id);
 
     post.comments.splice(removeIndex, 1);
 
     await post.save();
 
     res.json(post.comments);
-    
   } catch (error) {
     console.error(error);
     res.status(500).json(error);

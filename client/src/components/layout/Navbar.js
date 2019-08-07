@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState, Fragment } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { logout } from "../../actions/auth";
 
-const Navbar = () => {
+const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+  const [shouldDisplayList, setShouldDisplayList] = useState(false);
+
   const getMonthString = month => {
     switch (month) {
       case 0:
@@ -34,9 +39,52 @@ const Navbar = () => {
 
   const today = new Date();
 
+  const AuthLink = (
+    <a onClick={logout} href="#!">
+      <i className="fas fa-sign-out-alt" /> Salir
+    </a>
+  );
+
+  var displayList = shouldDisplayList ? (
+    <section className="movilList">
+      <ul>
+        <li>
+          <a href="/">
+            <strong>COMUNA</strong>
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <strong>NOTICIAS</strong>
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <strong>TRAMITES</strong>
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <strong>INSTITUCIONES</strong>
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <strong>EMPRESAS</strong>
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <strong>CONTACTO</strong>
+          </a>
+        </li>
+      </ul>
+    </section>
+  ) : null;
+
   return (
     <nav className="navbar bg-gradient">
-      <div>
+      <div id="desktopNav">
         <p>
           {today.getDate() +
             " de " +
@@ -77,8 +125,29 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+      <div id="movilNav">
+        <i
+          className="fas fa-bars fa-2x"
+          onClick={() => setShouldDisplayList(!shouldDisplayList)}
+          style={{ color: "white" }}
+        />
+        {displayList}
+      </div>
+      {!loading && <Fragment>{isAuthenticated && AuthLink}</Fragment>}
     </nav>
   );
 };
 
-export default Navbar;
+Navbar.propTypes = {
+  logout: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { logout }
+)(Navbar);

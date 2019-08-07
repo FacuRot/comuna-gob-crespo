@@ -1,0 +1,54 @@
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import Spinner from "../layout/Spinner";
+import { Link } from "react-router-dom";
+
+const Dashboard = ({ auth: { loading, user } }) => {
+  return loading && user === null ? (
+    <div className="container">
+      <Spinner />
+    </div>
+  ) : (
+    <div className="container">
+      <h1 className="large text-primary">Dashboard</h1>
+      <p className="lead" style={{ color: "white" }}>
+        <i className="fas fa-user" /> Bienvenido/a {user && user.name}
+      </p>
+      <p style={{ color: "white", marginTop: "30px" }}>
+        Estas son las acciones que puedes realizar:
+      </p>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column"
+        }}
+      >
+        <Link
+          to="/create-news"
+          className="btn text-center"
+          style={{ marginTop: "10px" }}
+        >
+          Redactar una Noticia
+        </Link>
+        <Link
+          to="/dashboard"
+          className="btn text-center"
+          style={{ marginTop: "10px" }}
+        >
+          Crear un Evento
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+Dashboard.propTypes = {
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps)(Dashboard);

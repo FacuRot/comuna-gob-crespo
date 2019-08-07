@@ -4,6 +4,7 @@
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  --purple-gradient: linear-gradient(to right, #4c316d, #8f5e95);
 }
 
 * {
@@ -43,6 +44,19 @@ img {
   margin-bottom: 3rem;
 }
 
+.rounded {
+  border-radius: 50%;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
 /* Text Styles*/
 .x-large {
   font-size: 4rem;
@@ -63,6 +77,14 @@ img {
 
 .text-center {
   text-align: center;
+}
+
+.text-primary {
+  color: #e36661;
+}
+
+.text-dark {
+  color: var(--dark-color);
 }
 
 /* Padding */
@@ -225,6 +247,10 @@ button {
   padding-right: 0.45rem;
 }
 
+#movilNav {
+  display: none;
+}
+
 /* Landing Page */
 .landing {
   position: relative;
@@ -272,26 +298,41 @@ button {
     flex-wrap: wrap;
   }
 
-  .navbar p {
+  #desktopNav {
     display: none;
   }
 
-  .navbar ul {
-    text-align: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  #movilNav {
+    display: flex;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
-  .navbar ul li a {
-    font-size: 10px;
+  #movilNav:hover {
+    cursor: pointer;
+  }
+
+  .movilList ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 0.5rem;
+  }
+
+  .movilList ul li {
+    margin-top: 1rem;
   }
 
   /* Iconsbar */
-  .iconsbar section p {
-    font-size: 10px;
+  .iconsbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  .icon {
-    width: 45px;
-    height: 45px;
+
+  .iconsbar section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }
