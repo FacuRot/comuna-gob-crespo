@@ -32,7 +32,7 @@ const Dashboard = ({ auth: { loading, user } }) => {
           Redactar una Noticia
         </Link>
         <Link
-          to="/dashboard"
+          to="/create-events"
           className="btn text-center"
           style={{ marginTop: "10px" }}
         >

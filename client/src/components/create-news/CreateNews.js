@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Placeholder from "./placeholder.png";
 import { createNews } from "../../actions/news";
+import { Link } from "react-router-dom";
+import Noticias from "./noticiasIcono.png";
 
 class CreateNews extends Component {
   constructor() {
@@ -51,7 +53,15 @@ class CreateNews extends Component {
       <div className="container">
         <h1 className="large text-primary">Redacta una noticia</h1>
         <p className="lead" style={{ color: "white" }}>
-          <i className="fas fa-user" />
+        <img
+          src={Noticias}
+          alt="Noticias"
+          style={{
+            width: "30px",
+            height: "30px",
+            marginRight: "5px"
+          }}
+        />
           Completa los campos para poder publicar la noticia
         </p>
         <small style={{ color: "white" }}>* = campos requeridos</small>
@@ -142,9 +152,9 @@ class CreateNews extends Component {
             value="Submit"
             className="btn btn-primary my-1"
           />
-          <a className="btn btn-light my-1" href="dashboard.html">
-            Go Back
-          </a>
+          <Link className="btn my-1" to="/dashboard">
+            Volver
+          </Link>
         </form>
       </div>
     );
