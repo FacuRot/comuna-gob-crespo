@@ -44,6 +44,12 @@ img {
   margin-bottom: 3rem;
 }
 
+.news-container {
+  max-width: 90%;
+  margin: auto;
+  margin-top: 50px;
+}
+
 .rounded {
   border-radius: 50%;
 }
@@ -55,6 +61,16 @@ img {
   overflow: hidden;
   position: absolute;
   z-index: -1;
+}
+
+/* Overlay */
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Text Styles*/
@@ -257,6 +273,10 @@ button {
   height: 100vh;
 }
 
+.landing-movil {
+  display: none;
+}
+
 /* Iconsbar */
 .iconsbar {
   background-color: white;
@@ -285,6 +305,19 @@ button {
   opacity: 0.7;
 }
 
+/* News */
+.news-mobile {
+  display: none;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .icon {
   width: 100px;
   height: 100px;
@@ -292,6 +325,17 @@ button {
 
 /* Mobile Styles */
 @media (max-width: 700px) {
+  /* Landing */
+  .landing {
+    display: none;
+  }
+
+  .landing-movil {
+    display: block;
+    position: relative;
+    height: 100vh;
+  }
+
   /* Navbar */
   .navbar {
     display: flex;
@@ -334,5 +378,38 @@ button {
   .iconsbar section {
     margin-top: 2rem;
     margin-bottom: 2rem;
+  }
+
+  /* News */
+  .news-desktop {
+    display: none;
+  }
+
+  .news-mobile {
+    display: block;
+  }
+
+  /* Footer */
+  .footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer p {
+    display: none;
+  }
+}
+
+/* Tablets Styles */
+@media (max-width: 800px) {
+  /* News */
+  .news-desktop {
+    display: none;
+  }
+
+  .news-mobile {
+    display: block;
   }
 }

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { setAlert } from "./alert";
+import { GET_NEWS } from "./types";
 
 // Create a new
 export const createNews = (newsData, history) => async dispatch => {
@@ -18,5 +19,19 @@ export const createNews = (newsData, history) => async dispatch => {
     if (errors) {
       errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
     }
+  }
+};
+
+// Get the list of news
+export const getNews = () => async dispatch => {
+  try {
+    const res = await axios.get("api/posts");
+
+    dispatch({
+      type: GET_NEWS,
+      payload: res.data
+    });
+  } catch (errors) {
+    errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
   }
 };
