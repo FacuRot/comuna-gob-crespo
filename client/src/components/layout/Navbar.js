@@ -1,7 +1,9 @@
 import React, { useState, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import { logout } from "../../actions/auth";
+import Logo from "../../img/logo.png";
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const [shouldDisplayList, setShouldDisplayList] = useState(false);
@@ -54,9 +56,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           </a>
         </li>
         <li>
-          <a href="/">
+          <Link to="/news">
             <strong>NOTICIAS</strong>
-          </a>
+          </Link>
         </li>
         <li>
           <a href="/">
@@ -84,6 +86,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   return (
     <nav className="navbar bg-gradient">
+      <img
+        src={Logo}
+        alt="Logo Comuna"
+        style={{ height: "120px", width: "auto", marginLeft: "30px" }}
+      />
       <div id="desktopNav">
         <p>
           {today.getDate() +
@@ -99,9 +106,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             </a>
           </li>
           <li>
-            <a href="/">
+            <Link to="/news">
               <strong>NOTICIAS</strong>
-            </a>
+            </Link>
           </li>
           <li>
             <a href="/">

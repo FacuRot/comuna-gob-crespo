@@ -39,7 +39,11 @@ const NewsDesktop = props => {
           </p>
           <h3 style={{ color: "white" }}>{news[0].title}</h3>
           <p style={{ color: "white" }}>{news[0].text.substr(0, 150)}...</p>
-          <Link to="/" className="btn" style={{ marginTop: "30px" }}>
+          <Link
+            to={`/new/${news[0]._id}`}
+            className="btn"
+            style={{ marginTop: "30px" }}
+          >
             Seguir Leyendo
           </Link>
         </section>
@@ -47,8 +51,8 @@ const NewsDesktop = props => {
       <section style={{ display: "flex" }}>
         {news.slice(1, 4).map((item, i) => (
           <Link
-            key={item.id}
-            to="/"
+            key={item._id}
+            to={`/new/${item._id}`}
             style={{
               margin: "10px",
               display: "flex",
@@ -68,7 +72,7 @@ const NewsDesktop = props => {
           </Link>
         ))}
         <Link
-          to="/"
+          to="/news"
           style={{
             margin: "10px",
             display: "flex",

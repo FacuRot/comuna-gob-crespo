@@ -6,4 +6,5 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT = "LOGOUT";
 export const GET_NEWS = "GET_NEWS";
+export const GET_NEW = "GET_NEW";
 export const GET_EVENTS = "GET_EVENTS";
