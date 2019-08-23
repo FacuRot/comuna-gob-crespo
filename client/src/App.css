@@ -376,7 +376,43 @@ button {
 .links {
   display: flex;
   flex-direction: column;
-  padding-left: 7px;
+  padding: 7px;
+}
+
+/* Texto sobre Imagen */
+.textOverImage {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 4px;
+  background-size: 190%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.5s;
+}
+
+.textOverImage:hover {
+  background-size: 200%;
+}
+
+.divOverImage {
+  height: 100%;
+  padding: 8px;
+  opacity: 0;
+  color: #fff;
+
+  transition: 0.5s;
+}
+
+.divOverImage:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
 }
 
 /* Mobile Styles */
@@ -481,6 +517,11 @@ button {
   .footer a {
     margin-top: 15px;
   }
+
+  /* More News */
+  .moreNewsDesktop {
+    display: none;
+  }
 }
 
 /* Tablets Styles */
@@ -498,5 +539,9 @@ button {
     display: flex;
     flex-direction: column;
     align-items: space-evenly;
+  }
+
+  .moreNewsDesktop {
+    display: none;
   }
 }

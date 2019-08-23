@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,7 +7,10 @@ const Footer = () => {
         <section
           style={{ display: "flex", alignItems: "center", marginLeft: "10px" }}
         >
-          <i class="fas fa-map-marker-alt fa-lg" style={{ color: "white" }} />
+          <i
+            className="fas fa-map-marker-alt fa-lg"
+            style={{ color: "white" }}
+          />
           <p style={{ color: "white", marginLeft: "10px" }}>
             <strong>
               Av. San Martin 198 Gobernador Crespo, Santa Fe, Argentina
@@ -18,7 +20,7 @@ const Footer = () => {
         <section
           style={{ display: "flex", alignItems: "center", marginLeft: "10px" }}
         >
-          <i class="fas fa-phone-alt fa-lg" style={{ color: "white" }} />
+          <i className="fas fa-phone-alt fa-lg" style={{ color: "white" }} />
           <p style={{ color: "white", marginLeft: "5px" }}>
             <strong>03498 48-0264</strong>
           </p>
