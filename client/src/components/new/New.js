@@ -9,7 +9,7 @@ import MoreNews from "./MoreNews";
 const New = ({ getNewById, news: { newItem, loading }, match }) => {
   useEffect(() => {
     getNewById(match.params.id);
-  }, [getNewById, match]);
+  }, []);
 
   const date = new Date(newItem.date);
   const isEmptyObject =
