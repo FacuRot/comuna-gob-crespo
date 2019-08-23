@@ -9,6 +9,8 @@ import Footer from "./components/layout/Footer";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import CreateNews from "./components/create-news/CreateNews";
 import CreateEvents from "./components/create-events/CreateEvents";
+import News from "./components/news/News";
+import New from "./components/new/New";
 // Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -43,6 +45,8 @@ const App = () => {
                 path="/create-events"
                 component={CreateEvents}
               />
+              <Route exact path="/news" component={News} />
+              <Route exact path="/new/:id" component={New} />
             </Switch>
           </section>
           <Footer />
