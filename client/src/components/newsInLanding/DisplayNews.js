@@ -14,7 +14,7 @@ const DisplayNews = ({ getNews, news: { loading, newsArray } }) => {
   const content =
     loading || newsArray === [] ? null : (
       <div>
-        <div style={{width: "90%", margin: "auto"}}>
+        <div style={{ width: "90%", margin: "auto" }}>
           <section
             style={{ display: "flex", alignItems: "center", marginTop: "20px" }}
           >

@@ -9,7 +9,7 @@ const NewsItemDesktop = props => {
     <div className="news-container">
       <div>
         {newsArray.map(item => (
-          <div className="news-item">
+          <div key={item._id} className="news-item">
             <img src={item.image.filename} alt="Noticia" className="news-img" />
             <section style={{ width: "300px" }}>
               <p className="small" style={{ color: "grey" }}>

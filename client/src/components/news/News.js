@@ -8,7 +8,7 @@ import NoticiasIcono from "../newsInLanding/noticiasIcono.png";
 const News = ({ getNews, news: { loading, newsArray } }) => {
   useEffect(() => {
     getNews();
-  }, []);
+  }, [getNews]);
 
   const content =
     loading || newsArray === [] ? (

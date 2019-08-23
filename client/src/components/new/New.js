@@ -4,11 +4,12 @@ import { connect } from "react-redux";
 import { getNewById } from "../../actions/news";
 import NoticiasIcono from "../newsInLanding/noticiasIcono.png";
 import Links from "../links/Links";
+import MoreNews from "./MoreNews";
 
 const New = ({ getNewById, news: { newItem, loading }, match }) => {
   useEffect(() => {
     getNewById(match.params.id);
-  }, [getNewById]);
+  }, [getNewById, match]);
 
   const date = new Date(newItem.date);
   const isEmptyObject =
@@ -19,7 +20,12 @@ const New = ({ getNewById, news: { newItem, loading }, match }) => {
       <div>Cargando Contenido...</div>
     ) : (
       <div className="news-container">
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column"
+          }}
+        >
           <p className="small NoticiaIndividual" style={{ color: "grey" }}>
             {date.getUTCDate() +
               " / " +
@@ -77,6 +83,7 @@ const New = ({ getNewById, news: { newItem, loading }, match }) => {
         </section>
       </div>
       {content}
+      <MoreNews />
     </div>
   );
 };
