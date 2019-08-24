@@ -16,7 +16,7 @@ const NewsMobile = props => {
         {news[0].text.substr(0, 200)}...
       </p>
       <Link
-        to={`/new/${news[0]._id}`}
+        to={`/noticia/${news[0]._id}`}
         className="btn"
         style={{ marginLeft: "10px", marginTop: "15px" }}
       >

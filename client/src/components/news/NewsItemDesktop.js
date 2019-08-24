@@ -27,7 +27,7 @@ const NewsItemDesktop = props => {
                 <h3>{item.title}</h3>
                 <p style={{ color: "grey" }}>{item.text.substr(0, 200)}...</p>
                 <Link
-                  to={`/new/${item._id}`}
+                  to={`/noticia/${item._id}`}
                   className="btn"
                   style={{ marginTop: "30px" }}
                 >

@@ -31,7 +31,7 @@ const MoreNews = ({ getNews, news: { newsArray, loading } }) => {
                 <h3>{item.title}</h3>
                 <p>{item.text.substr(0, 100)}</p>
                 <Link
-                  to={`/new/${item._id}`}
+                  to={`/noticia/${item._id}`}
                   className="btn"
                   style={{ marginTop: "20px" }}
                 >
