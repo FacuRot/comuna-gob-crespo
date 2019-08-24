@@ -1,6 +1,6 @@
 import axios from "axios";
 import { setAlert } from "./alert";
-import { GET_NEWS, GET_NEW } from "./types";
+import { GET_NEWS, GET_NEW, GET_MORE_NEWS } from "./types";
 
 // Create a new
 export const createNews = (newsData, history) => async dispatch => {
@@ -31,7 +31,6 @@ export const getNews = () => async dispatch => {
       type: GET_NEWS,
       payload: res.data
     });
-
   } catch (errors) {
     errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
   }
@@ -44,6 +43,20 @@ export const getNewById = newId => async dispatch => {
 
     dispatch({
       type: GET_NEW,
+      payload: res.data
+    });
+  } catch (errors) {
+    errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
+  }
+};
+
+// Get news for MoreNews component
+export const getMoreNews = () => async dispatch => {
+  try {
+    const res = await axios.get("api/posts");
+
+    dispatch({
+      type: GET_MORE_NEWS,
       payload: res.data
     });
   } catch (errors) {
