@@ -1,8 +1,9 @@
-import { GET_NEWS, GET_NEW } from "../actions/types";
+import { GET_NEWS, GET_NEW, GET_MORE_NEWS } from "../actions/types";
 
 const initialState = {
   newsArray: [],
   newItem: null,
+  moreNews: [],
   loading: true
 };
 
@@ -18,6 +19,12 @@ export default function(state = initialState, action) {
         newItem: payload,
         loading: false
       };
+    case GET_MORE_NEWS:
+      return {
+        ...state,
+        moreNews: payload,
+        loading: false
+      }
     default:
       return state;
   }
