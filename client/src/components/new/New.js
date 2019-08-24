@@ -21,47 +21,6 @@ const New = ({
   const isEmptyObject =
     Object.entries(newItem).length === 0 && newItem.constructor === Object;
 
-  const content =
-    loading || isEmptyObject ? (
-      <div>Cargando Contenido...</div>
-    ) : (
-      <div className="news-container">
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column"
-          }}
-        >
-          <p className="small NoticiaIndividual" style={{ color: "grey" }}>
-            {date.getUTCDate() +
-              " / " +
-              date.getUTCMonth() +
-              " / " +
-              date.getUTCFullYear()}
-          </p>
-          <h2 className="NoticiaIndividual">{newItem.title}</h2>
-          <img
-            id="imgNoticiaIndividual"
-            src={newItem.image.filename}
-            alt="Noticia"
-          />
-          <p
-            className="NoticiaIndividual"
-            style={{ color: "grey", marginTop: "20px" }}
-          >
-            {newItem.text}
-          </p>
-          <p
-            className="small NoticiaIndividual"
-            style={{ color: "grey", marginTop: "20px" }}
-          >
-            Fuente: {newItem.font}
-          </p>
-        </div>
-        <Links />
-      </div>
-    );
-
   return (
     <div style={{ backgroundColor: "white" }}>
       <div className="banner">
@@ -88,7 +47,45 @@ const New = ({
           </h1>
         </section>
       </div>
-      {content}
+      {loading || isEmptyObject ? (
+        <div>Cargando Contenido...</div>
+      ) : (
+        <div className="news-container">
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column"
+            }}
+          >
+            <p className="small NoticiaIndividual" style={{ color: "grey" }}>
+              {date.getUTCDate() +
+                " / " +
+                date.getUTCMonth() +
+                " / " +
+                date.getUTCFullYear()}
+            </p>
+            <h2 className="NoticiaIndividual">{newItem.title}</h2>
+            <img
+              id="imgNoticiaIndividual"
+              src={newItem.image.filename}
+              alt="Noticia"
+            />
+            <p
+              className="NoticiaIndividual"
+              style={{ color: "grey", marginTop: "20px" }}
+            >
+              {newItem.text}
+            </p>
+            <p
+              className="small NoticiaIndividual"
+              style={{ color: "grey", marginTop: "20px" }}
+            >
+              Fuente: {newItem.font}
+            </p>
+          </div>
+          <Links />
+        </div>
+      )}
       <MoreNews newsArray={newsArray} />
     </div>
   );
