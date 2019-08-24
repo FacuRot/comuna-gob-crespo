@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getNewById } from "../../actions/news";
+import { getNewById, getMoreNews } from "../../actions/news";
 import NoticiasIcono from "../newsInLanding/noticiasIcono.png";
 import Links from "../links/Links";
 import MoreNews from "./MoreNews";

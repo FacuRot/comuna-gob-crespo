@@ -1,14 +1,10 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getMoreNews } from "../../actions/news";
+import { getNews } from "../../actions/news";
 import { Link } from "react-router-dom";
 
-const MoreNews = ({ getMoreNews, news: { moreNews, loading } }) => {
-  useEffect(() => {
-    getMoreNews();
-  }, [getMoreNews]);
-
+const MoreNews = ({ news: { newsArray, loading } }) => {
   return (
     <div
       className="moreNewsDesktop"
@@ -16,10 +12,10 @@ const MoreNews = ({ getMoreNews, news: { moreNews, loading } }) => {
     >
       <h3>Tambien te puede interesar: </h3>
       <div style={{ display: "flex" }}>
-        {loading || moreNews === [] ? (
+        {loading || newsArray === [] ? (
           <h3>Cargando Noticias Interesantes...</h3>
         ) : (
-          moreNews.slice(0, 4).map(item => (
+          newsArray.slice(0, 4).map(item => (
             <div
               key={item._id}
               className="textOverImage"
@@ -47,7 +43,7 @@ const MoreNews = ({ getMoreNews, news: { moreNews, loading } }) => {
 };
 
 MoreNews.propTypes = {
-  getMoreNews: PropTypes.func.isRequired
+  getNews: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -56,5 +52,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getMoreNews }
+  {}
 )(MoreNews);
