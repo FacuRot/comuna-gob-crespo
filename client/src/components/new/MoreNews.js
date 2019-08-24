@@ -1,14 +1,8 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import { connect } from "react-redux";
-import { getNews } from "../../actions/news";
 import { Link } from "react-router-dom";
 
-const MoreNews = ({ getNews, news: { newsArray, loading } }) => {
-  useEffect(() => {
-    getNews();
-  }, [getNews]);
-
+const MoreNews = ({ news: { newsArray, loading } }) => {
   return (
     <div
       className="moreNewsDesktop"
@@ -46,15 +40,11 @@ const MoreNews = ({ getNews, news: { newsArray, loading } }) => {
   );
 };
 
-MoreNews.propTypes = {
-  getNews: PropTypes.func.isRequired
-};
-
 const mapStateToProps = state => ({
   news: state.news
 });
 
 export default connect(
   mapStateToProps,
-  { getNews }
+  {}
 )(MoreNews);
