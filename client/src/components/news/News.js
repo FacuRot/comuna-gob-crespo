@@ -1,15 +1,9 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import { connect } from "react-redux";
-import { getNews } from "../../actions/news";
 import NewsItemDesktop from "./NewsItemDesktop";
 import NoticiasIcono from "../newsInLanding/noticiasIcono.png";
 
-const News = ({ getNews, news: { loading, newsArray } }) => {
-  useEffect(() => {
-    getNews();
-  }, [getNews]);
-
+const News = ({ news: { loading, newsArray } }) => {
   const content =
     loading || newsArray === [] ? (
       <div>Cargando Contenido...</div>
@@ -52,15 +46,11 @@ const News = ({ getNews, news: { loading, newsArray } }) => {
   );
 };
 
-News.propTypes = {
-  getNews: PropTypes.func.isRequired
-};
-
 const mapStateToProps = state => ({
   news: state.news
 });
 
 export default connect(
   mapStateToProps,
-  { getNews }
+  {}
 )(News);
