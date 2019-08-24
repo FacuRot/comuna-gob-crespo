@@ -34,7 +34,7 @@ export const getNews = () => async dispatch => {
 
     dispatch({
       type: GET_NEW,
-      payload: {}
+      payload: null
     });
   } catch (errors) {
     errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
