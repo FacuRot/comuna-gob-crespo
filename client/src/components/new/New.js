@@ -1,15 +1,21 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getNewById } from "../../actions/news";
+import { getNewById, getNews } from "../../actions/news";
 import NoticiasIcono from "../newsInLanding/noticiasIcono.png";
 import Links from "../links/Links";
 import MoreNews from "./MoreNews";
 
-const New = ({ getNewById, news: { newItem, loading }, match }) => {
+const New = ({
+  getNewById,
+  getNews,
+  news: { newItem, loading, newsArray },
+  match
+}) => {
   useEffect(() => {
     getNewById(match.params.id);
-  }, []);
+    getNews();
+  }, [getNewById, getNews, match]);
 
   const date = new Date(newItem.date);
   const isEmptyObject =
@@ -83,14 +89,15 @@ const New = ({ getNewById, news: { newItem, loading }, match }) => {
         </section>
       </div>
       {content}
-      <MoreNews />
+      <MoreNews newsArray={newsArray} />
     </div>
   );
 };
 
 New.propTypes = {
   news: PropTypes.object.isRequired,
-  getNewById: PropTypes.func.isRequired
+  getNewById: PropTypes.func.isRequired,
+  getNews: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -99,5 +106,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getNewById }
+  { getNewById, getNews }
 )(New);
