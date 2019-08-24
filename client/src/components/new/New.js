@@ -80,8 +80,9 @@ const New = ({
           <Links />
         </div>
       )}
-
-      <MoreNews />
+      {     
+      //<MoreNews />
+      }
     </div>
   );
 };
