@@ -48,7 +48,4 @@ const mapStateToProps = state => ({
   news: state.news
 });
 
-export default connect(
-  mapStateToProps,
-  { getNews }
-)(MoreNews);
+export default MoreNews;
