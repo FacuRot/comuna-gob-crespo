@@ -46,7 +46,7 @@ const App = () => {
                 component={CreateEvents}
               />
               <Route exact path="/news" component={News} />
-              <Route exact path="/new/:id" component={New} />
+              <Route exact path="/noticia/:id" component={New} />
             </Switch>
           </section>
           <Footer />

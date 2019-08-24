@@ -40,7 +40,7 @@ const NewsDesktop = props => {
           <h3 style={{ color: "white" }}>{news[0].title}</h3>
           <p style={{ color: "white" }}>{news[0].text.substr(0, 150)}...</p>
           <Link
-            to={`/new/${news[0]._id}`}
+            to={`/noticia/${news[0]._id}`}
             className="btn"
             style={{ marginTop: "30px" }}
           >
@@ -52,7 +52,7 @@ const NewsDesktop = props => {
         {news.slice(1, 4).map((item, i) => (
           <Link
             key={item._id}
-            to={`/new/${item._id}`}
+            to={`/noticia/${item._id}`}
             style={{
               margin: "10px",
               display: "flex",

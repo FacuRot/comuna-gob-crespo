@@ -32,10 +32,6 @@ export const getNews = () => async dispatch => {
       payload: res.data
     });
 
-    dispatch({
-      type: GET_NEW,
-      payload: null
-    });
   } catch (errors) {
     errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
   }
