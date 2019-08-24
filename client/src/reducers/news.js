@@ -2,7 +2,7 @@ import { GET_NEWS, GET_NEW } from "../actions/types";
 
 const initialState = {
   newsArray: [],
-  newItem: {},
+  newItem: null,
   loading: true
 };
 

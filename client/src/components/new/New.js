@@ -1,25 +1,19 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getNewById, getNews } from "../../actions/news";
+import { getNewById } from "../../actions/news";
 import NoticiasIcono from "../newsInLanding/noticiasIcono.png";
 import Links from "../links/Links";
 import MoreNews from "./MoreNews";
 
 const New = ({
   getNewById,
-  getNews,
-  news: { newItem, loading, newsArray },
+  news: { newItem, loading },
   match
 }) => {
   useEffect(() => {
     getNewById(match.params.id);
-    getNews();
-  }, [getNewById, getNews, match]);
-
-  const date = new Date(newItem.date);
-  const isEmptyObject =
-    Object.entries(newItem).length === 0 && newItem.constructor === Object;
+  }, [getNewById, match]);
 
   return (
     <div style={{ backgroundColor: "white" }}>
@@ -47,7 +41,7 @@ const New = ({
           </h1>
         </section>
       </div>
-      {loading || isEmptyObject ? (
+      {loading || newItem === null ? (
         <div>Cargando Contenido...</div>
       ) : (
         <div className="news-container">
@@ -58,11 +52,11 @@ const New = ({
             }}
           >
             <p className="small NoticiaIndividual" style={{ color: "grey" }}>
-              {date.getUTCDate() +
+              {new Date(newItem.date).getUTCDate() +
                 " / " +
-                date.getUTCMonth() +
+                new Date(newItem.date).getUTCMonth() +
                 " / " +
-                date.getUTCFullYear()}
+                new Date(newItem.date).getUTCFullYear()}
             </p>
             <h2 className="NoticiaIndividual">{newItem.title}</h2>
             <img
@@ -86,17 +80,15 @@ const New = ({
           <Links />
         </div>
       )}
-     {
-     // <MoreNews newsArray={newsArray} />
-     }
+
+      <MoreNews />
     </div>
   );
 };
 
 New.propTypes = {
   news: PropTypes.object.isRequired,
-  getNewById: PropTypes.func.isRequired,
-  getNews: PropTypes.func.isRequired
+  getNewById: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -105,5 +97,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getNewById, getNews }
+  { getNewById }
 )(New);
