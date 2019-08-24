@@ -6,11 +6,7 @@ import NoticiasIcono from "../newsInLanding/noticiasIcono.png";
 import Links from "../links/Links";
 import MoreNews from "./MoreNews";
 
-const New = ({
-  getNewById,
-  news: { newItem, loading },
-  match
-}) => {
+const New = ({ getNewById, news: { newItem, loading }, match }) => {
   useEffect(() => {
     getNewById(match.params.id);
   }, [getNewById, match]);
@@ -80,9 +76,8 @@ const New = ({
           <Links />
         </div>
       )}
-      {     
-      //<MoreNews />
-      }
+
+      <MoreNews />
     </div>
   );
 };
