@@ -86,7 +86,9 @@ const New = ({
           <Links />
         </div>
       )}
-      <MoreNews newsArray={newsArray} />
+     {
+     // <MoreNews newsArray={newsArray} />
+     }
     </div>
   );
 };
