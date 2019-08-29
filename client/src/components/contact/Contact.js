@@ -73,7 +73,15 @@ const Contact = ({ sendEmail, history }) => {
           </h1>
         </section>
       </div>
-      {map}
+      <iframe
+        title="Map"
+        width="100%"
+        frameborder="0"
+        style={{ border: "0", height: "50vh" }}
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCXi6RldQ9oUvwRXeFLB5bZ3WlBNGyIO9E
+        &q=Comuna+de+Gobernador+Crespo"
+        allowfullscreen
+      ></iframe>
       <Alert />
       <div className="news-container" style={{ marginTop: "10px" }}>
         <form
