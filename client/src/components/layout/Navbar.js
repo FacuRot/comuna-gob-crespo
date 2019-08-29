@@ -51,12 +51,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <section className="movilList">
       <ul>
         <li>
-          <Link to="/comuna">
+          <Link
+            to="/comuna"
+            onClick={() => setShouldDisplayList(!shouldDisplayList)}
+          >
             <strong>COMUNA</strong>
           </Link>
         </li>
         <li>
-          <Link to="/news">
+          <Link
+            to="/news"
+            onClick={() => setShouldDisplayList(!shouldDisplayList)}
+          >
             <strong>NOTICIAS</strong>
           </Link>
         </li>
@@ -71,7 +77,10 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           </a>
         </li>
         <li>
-          <Link to="/contacto">
+          <Link
+            to="/contacto"
+            onClick={() => setShouldDisplayList(!shouldDisplayList)}
+          >
             <strong>CONTACTO</strong>
           </Link>
         </li>
