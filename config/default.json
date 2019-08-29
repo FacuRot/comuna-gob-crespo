@@ -3,5 +3,6 @@
   "jwtSecret": "compumundohipermegared",
   "awsAccessKey": "AKIAIIIWTVSSIR7CIVRA",
   "awsSecretAccessKey": "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",
-  "recaptchaSecretKey": "6LeHY7UUAAAAAChNGD26-DJnk7TBGfJYOFHgOLj0"
+  "recaptchaSecretKey": "6LeHY7UUAAAAAChNGD26-DJnk7TBGfJYOFHgOLj0",
+  "sendgridApiKey": "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"
 }
