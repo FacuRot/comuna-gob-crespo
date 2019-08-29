@@ -12,9 +12,7 @@ const Footer = () => {
             style={{ color: "white" }}
           />
           <p style={{ color: "white", marginLeft: "10px" }}>
-            <strong>
-              Av. San Martin 198 Gobernador Crespo, Santa Fe, Argentina
-            </strong>
+            Av. San Martin 198 Gobernador Crespo, Santa Fe, Argentina
           </p>
         </section>
         <section
@@ -22,7 +20,7 @@ const Footer = () => {
         >
           <i className="fas fa-phone-alt fa-lg" style={{ color: "white" }} />
           <p style={{ color: "white", marginLeft: "5px" }}>
-            <strong>03498 48-0264</strong>
+            03498 48-0264
           </p>
         </section>
       </section>
