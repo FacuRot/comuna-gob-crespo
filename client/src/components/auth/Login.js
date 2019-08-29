@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 import { login } from "../../actions/auth";
+import Alert from "../layout/Alert";
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -27,6 +28,7 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <div className="container">
+      <Alert />
       <h1 className="large" style={{ color: "white" }}>
         Ingresar
       </h1>

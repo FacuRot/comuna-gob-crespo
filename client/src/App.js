@@ -11,6 +11,8 @@ import CreateNews from "./components/create-news/CreateNews";
 import CreateEvents from "./components/create-events/CreateEvents";
 import News from "./components/news/News";
 import New from "./components/new/New";
+import Comuna from "./components/comuna/Comuna";
+import Contact from "./components/contact/Contact";
 // Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -35,7 +37,6 @@ const App = () => {
           <Navbar />
           <Route exact path="/" component={Landing} />
           <section>
-            <Alert />
             <Switch>
               <Route exact path="/login" component={Login} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
@@ -47,6 +48,8 @@ const App = () => {
               />
               <Route exact path="/news" component={News} />
               <Route exact path="/noticia/:id" component={New} />
+              <Route exact path="/comuna" component={Comuna} />
+              <Route exact path="/contacto" component={Contact} />
             </Switch>
           </section>
           <Footer />

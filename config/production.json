@@ -2,5 +2,6 @@
   "mongoURI": "mongodb+srv://facu123:facu123@clustercomuna-cgwsp.mongodb.net/test?retryWrites=true&w=majority",
   "jwtSecret": "compumundohipermegared",
   "awsAccessKey": "AKIAIIIWTVSSIR7CIVRA",
-  "awsSecretAccessKey": "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"
+  "awsSecretAccessKey": "NQaTdWAajakEP+LqF/5A4Ie+II0PquPuKBXIQ+Kb",
+  "recaptchaSecretKey": "6LeHY7UUAAAAAChNGD26-DJnk7TBGfJYOFHgOLj0"
 }

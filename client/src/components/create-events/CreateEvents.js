@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { createEvent } from "../../actions/events";
 import { Link } from "react-router-dom";
 import Agenda from "./agenda.png";
+import Alert from "../layout/Alert";
 
 const CreateEvents = ({ createEvent, history }) => {
   const [formData, setFormData] = useState({
@@ -31,6 +32,7 @@ const CreateEvents = ({ createEvent, history }) => {
   };
   return (
     <div className="container">
+      <Alert />
       <h1 className="large text-primary">Crea un Evento</h1>
       <p className="lead" style={{ color: "white" }}>
         <img

@@ -5,6 +5,7 @@ import Placeholder from "./placeholder.png";
 import { createNews } from "../../actions/news";
 import { Link } from "react-router-dom";
 import Noticias from "./noticiasIcono.png";
+import Alert from "../layout/Alert";
 
 class CreateNews extends Component {
   constructor() {
@@ -51,17 +52,18 @@ class CreateNews extends Component {
   render() {
     return (
       <div className="container">
+        <Alert />
         <h1 className="large text-primary">Redacta una noticia</h1>
         <p className="lead" style={{ color: "white" }}>
-        <img
-          src={Noticias}
-          alt="Noticias"
-          style={{
-            width: "30px",
-            height: "30px",
-            marginRight: "5px"
-          }}
-        />
+          <img
+            src={Noticias}
+            alt="Noticias"
+            style={{
+              width: "30px",
+              height: "30px",
+              marginRight: "5px"
+            }}
+          />
           Completa los campos para poder publicar la noticia
         </p>
         <small style={{ color: "white" }}>* = campos requeridos</small>
