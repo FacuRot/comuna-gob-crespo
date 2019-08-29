@@ -51,9 +51,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <section className="movilList">
       <ul>
         <li>
-          <a href="/">
+          <Link to="/comuna">
             <strong>COMUNA</strong>
-          </a>
+          </Link>
         </li>
         <li>
           <Link to="/news">
@@ -71,14 +71,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           </a>
         </li>
         <li>
-          <a href="/">
-            <strong>EMPRESAS</strong>
-          </a>
-        </li>
-        <li>
-          <a href="/">
+          <Link to="/contacto">
             <strong>CONTACTO</strong>
-          </a>
+          </Link>
         </li>
       </ul>
     </section>
@@ -86,11 +81,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   return (
     <nav className="navbar bg-gradient">
-      <img
-        src={Logo}
-        alt="Logo Comuna"
-        style={{ height: "120px", width: "auto", marginLeft: "30px" }}
-      />
+      <Link to="/">
+        <img
+          src={Logo}
+          alt="Logo Comuna"
+          style={{
+            height: "90px",
+            width: "auto",
+            marginLeft: "10px",
+            padding: "0px"
+          }}
+        />
+      </Link>
       <div id="desktopNav">
         <p>
           {today.getDate() +
@@ -101,9 +103,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         </p>
         <ul>
           <li>
-            <a href="/">
+            <Link to="/comuna">
               <strong>COMUNA</strong>
-            </a>
+            </Link>
           </li>
           <li>
             <Link to="/news">
@@ -121,14 +123,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             </a>
           </li>
           <li>
-            <a href="/">
-              <strong>EMPRESAS</strong>
-            </a>
-          </li>
-          <li>
-            <a href="/">
+            <Link to="/contacto">
               <strong>CONTACTO</strong>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -136,7 +133,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         <i
           className="fas fa-bars fa-2x"
           onClick={() => setShouldDisplayList(!shouldDisplayList)}
-          style={{ color: "white" }}
+          style={{ color: "white", paddingTop: "25px" }}
         />
         {displayList}
       </div>
