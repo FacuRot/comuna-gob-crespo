@@ -3,6 +3,7 @@ const router = express.Router();
 const { check, validationResult } = require("express-validator");
 const config = require("config");
 const request = require("request");
+const sgMail = require("@sendgrid/mail");
 
 router.post(
   "/",
@@ -33,6 +34,7 @@ router.post(
       return res.status(400).json({ msg: "Es necesario completar el captcha" });
     }
 
+    const { name, email, text } = req.body;
     try {
       // Secret Key
       const secret = config.get("recaptchaSecretKey");
@@ -48,8 +50,17 @@ router.post(
         }
 
         // If successful
-        console.log("Captcha Exitoso");
-        return res.status(200).json({msg: "Captcha Exitoso"});
+        console.log(email);
+        sgMail.setApiKey(config.get("sendgridApiKey"));
+        const msg = {
+          to: "facu_rot@yahoo.com",
+          from: `${email}`,
+          subject:
+            "Email enviado desde la plataforma de la Comuna de Gdor. Crespo",
+          text: `Este mensaje fue escrito por ${name} \n Mensaje: ${text}`
+        };
+        sgMail.send(msg);
+        return res.status(200).json({ msg: "Captcha Exitoso" });
       });
     } catch (err) {
       console.log(err.message);
