@@ -18,11 +18,7 @@ const News = ({ getNews, news: { loading, newsArray } }) => {
     );
 
   return (
-    <div
-      style={{
-        backgroundColor: "white"
-      }}
-    >
+    <div>
       <div className="banner">
         <section
           style={{
@@ -43,7 +39,7 @@ const News = ({ getNews, news: { loading, newsArray } }) => {
               fontSize: "40px"
             }}
           >
-            NOTICIAS
+            Noticias
           </h1>
         </section>
       </div>

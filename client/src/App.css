@@ -18,7 +18,6 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: #333;
-  background-image: linear-gradient(to right, #004a98, #0c84c7);
 }
 
 a {
@@ -289,10 +288,9 @@ button {
 /* Banner */
 .banner {
   position: relative;
-  height: 35vh;
-  margin-top: 124px;
-  background: url("./img/crespo2.png") no-repeat center center/cover;
-  background-position: left center;
+  height: 20vh;
+  margin-top: 110px;
+  background: var(--purple-gradient);
 
   display: flex;
   align-items: center;
@@ -303,7 +301,7 @@ button {
   background-color: white;
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 
   margin-top: 0.5rem;
@@ -347,9 +345,9 @@ button {
 }
 
 .news-img {
-  width: 450px;
+  width: 400px;
   height: auto;
-  margin-right: 25px;
+  margin-right: 20px;
 }
 
 #imgNoticiaIndividual {
@@ -359,7 +357,7 @@ button {
 
 /* Table */
 table {
-  width: 100%;
+  width: 90%;
   margin-bottom: 30px;
 }
 
@@ -381,11 +379,12 @@ table tr td {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #eeeded;
 }
 
 .icon {
-  width: 100px;
-  height: 100px;
+  width: 85px;
+  height: 85px;
 }
 
 /* Links de Interes */
@@ -540,6 +539,11 @@ table tr td {
   .moreNewsDesktop {
     display: none;
   }
+
+  /* Events Arrows */
+  .eventArrow {
+    display: none;
+  }
 }
 
 /* Tablets Styles */
@@ -560,6 +564,10 @@ table tr td {
   }
 
   .moreNewsDesktop {
+    display: none;
+  }
+
+  .eventArrow {
     display: none;
   }
 }

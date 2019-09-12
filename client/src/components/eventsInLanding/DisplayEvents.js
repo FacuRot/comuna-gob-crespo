@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getEvents } from "../../actions/events";
@@ -63,12 +63,73 @@ const DisplayEvents = ({ getEvents, events: { loading, eventsArray } }) => {
     }
   };
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const onSlideChanged = e => {
+    setCurrentIndex(e.item);
+  };
+  const slidePrev = () => {
+    setCurrentIndex(currentIndex - 1);
+  };
+  const slideNext = () => {
+    setCurrentIndex(currentIndex + 1);
+  };
+
+  const galleryItems =
+    loading || eventsArray === []
+      ? null
+      : eventsArray.map(item => {
+          const current = new Date(item.date);
+          return (
+            <div
+              style={{
+                paddingBottom: "50px",
+                display: "flex",
+                justifyContent: "center"
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  color: "green"
+                }}
+              >
+                <p>
+                  <strong>{getDayString(current.getUTCDay())}</strong>
+                </p>
+                <p>
+                  <strong>{current.getUTCDate()}</strong>
+                </p>
+                <p>
+                  <strong>{getMonthString(current.getUTCMonth())}</strong>
+                </p>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                  color: "grey",
+                  marginLeft: "10px"
+                }}
+              >
+                <p>
+                  <strong>{item.title}</strong>
+                </p>
+                <p>{item.text}</p>
+              </div>
+            </div>
+          );
+        });
+
   const resItems = {
     0: {
       items: 1
     },
     1024: {
-      items: 4
+      items: 3
     }
   };
 
@@ -79,7 +140,6 @@ const DisplayEvents = ({ getEvents, events: { loading, eventsArray } }) => {
           style={{
             display: "flex",
             alignItems: "center",
-            marginTop: "70px",
             marginLeft: "5%",
             paddingTop: "25px",
             paddingBottom: "25px"
@@ -94,60 +154,47 @@ const DisplayEvents = ({ getEvents, events: { loading, eventsArray } }) => {
             AGENDA DE EVENTOS Y ACTOS
           </h3>
         </section>
-        <AliceCarousel
-          responsive={resItems}
-          mouseDragEnabled={true}
-          dotsDisabled={true}
-          buttonsDisabled={true}
-          autoPlay={true}
-          autoPlayInterval={5000}
+        <div
+          style={{
+            display: "flex",
+            maxWidth: "95%",
+            justifyContent: "flex-start",
+            alignItems: "flex-start"
+          }}
         >
-          {eventsArray.map(item => {
-            const current = new Date(item.date);
-            return (
-              <div
-                style={{
-                  paddingBottom: "50px",
-                  display: "flex",
-                  justifyContent: "center"
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    color: "green"
-                  }}
-                >
-                  <p>
-                    <strong>{getDayString(current.getUTCDay())}</strong>
-                  </p>
-                  <p>
-                    <strong>{current.getUTCDate()}</strong>
-                  </p>
-                  <p>
-                    <strong>{getMonthString(current.getUTCMonth())}</strong>
-                  </p>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    color: "grey",
-                    marginLeft: "10px"
-                  }}
-                >
-                  <p>
-                    <strong>{item.title}</strong>
-                  </p>
-                  <p>{item.text}</p>
-                </div>
-              </div>
-            );
-          })}
-        </AliceCarousel>
+          <span
+            className="eventArrow"
+            style={{ marginLeft: "20px", marginTop: "15px" }}
+            onClick={() => slidePrev()}
+          >
+            <i
+              className="fas fa-chevron-left"
+              style={{ cursor: "pointer" }}
+            ></i>
+          </span>
+          <AliceCarousel
+            responsive={resItems}
+            mouseDragEnabled={true}
+            dotsDisabled={true}
+            buttonsDisabled={true}
+            autoPlay={false}
+            startIndex={currentIndex}
+            slideToIndex={currentIndex}
+            items={galleryItems}
+            onSlideChanged={e => onSlideChanged(e)}
+          />
+
+          <span
+            className="eventArrow"
+            style={{ marginLeft: "10px", marginTop: "10px" }}
+            onClick={() => slideNext()}
+          >
+            <i
+              className="fas fa-chevron-right"
+              style={{ cursor: "pointer" }}
+            ></i>
+          </span>
+        </div>
       </div>
     );
 
