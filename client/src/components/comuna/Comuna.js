@@ -30,7 +30,7 @@ const Comuna = () => {
         </section>
       </div>
       <div className="news-container">
-        <div>
+        <div style={{ flexGrow: "2", margin: "10px" }}>
           <h3 style={{ marginBottom: "25px" }}>
             La Comisión Comunal está compuesta por
           </h3>

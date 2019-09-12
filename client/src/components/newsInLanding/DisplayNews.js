@@ -13,7 +13,13 @@ const DisplayNews = ({ getNews, news: { loading, newsArray } }) => {
 
   const content =
     loading || newsArray === [] ? null : (
-      <div>
+      <div
+        style={{
+          backgroundColor: "#eeeded",
+          paddingTop: "10px",
+          paddingBottom: "25px"
+        }}
+      >
         <div style={{ width: "90%", margin: "auto" }}>
           <section
             style={{ display: "flex", alignItems: "center", marginTop: "20px" }}
@@ -23,7 +29,7 @@ const DisplayNews = ({ getNews, news: { loading, newsArray } }) => {
               alt="Noticias"
               style={{ height: "30px", width: "auto" }}
             />
-            <h2 style={{ color: "white", marginLeft: "5px" }}>Noticias</h2>
+            <h1 style={{ marginLeft: "5px" }}>NOTICIAS</h1>
           </section>
           <section className="news-desktop">
             <NewsDesktop news={newsArray} />

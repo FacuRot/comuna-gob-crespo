@@ -26,19 +26,18 @@ const NewsDesktop = props => {
             flex: "50%",
             marginLeft: "10px",
             paddingLeft: "20px",
-            paddingTop: "20px",
-            backgroundImage: "linear-gradient(to right, #004a98, #0c84c7)"
+            paddingTop: "20px"
           }}
         >
-          <p style={{ color: "white" }}>
+          <p>
             {date.getDate() +
               "/" +
               (date.getMonth() + 1) +
               "/" +
               date.getFullYear()}
           </p>
-          <h3 style={{ color: "white" }}>{news[0].title}</h3>
-          <p style={{ color: "white" }}>{news[0].text.substr(0, 150)}...</p>
+          <h3>{news[0].title}</h3>
+          <p>{news[0].text.substr(0, 150)}...</p>
           <Link
             to={`/noticia/${news[0]._id}`}
             className="btn"
@@ -49,45 +48,44 @@ const NewsDesktop = props => {
         </section>
       </section>
       <section style={{ display: "flex" }}>
-        {news.slice(1, 4).map((item, i) => (
+        {news.slice(1, 5).map((item, i) => (
           <Link
             key={item._id}
             to={`/noticia/${item._id}`}
             style={{
-              margin: "10px",
+              width: "270px",
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
-              cursor: "pointer"
+              cursor: "pointer",
+              marginRight: "5px"
             }}
           >
             <img
               src={item.image.filename}
               alt="Noticia"
-              style={{ height: "200px", width: "270px" }}
+              style={{ height: "190px", width: "240px" }}
             />
-            <p style={{ color: "white", margin: "auto" }}>
+            <small style={{ color: "black" }}>
               <strong>{item.title}</strong>
-            </p>
+            </small>
           </Link>
         ))}
         <Link
           to="/news"
           style={{
-            margin: "10px",
+            width: "270px",
             display: "flex",
-            flexDirection: "column",
-            alignItems: "center"
+            flexDirection: "column"
           }}
         >
           <img
             src={NewsIcono}
             alt="Noticia"
-            style={{ height: "200px", width: "270px" }}
+            style={{ height: "190px", width: "240px" }}
           />
-          <p style={{ color: "white", margin: "auto" }}>
+          <small style={{ color: "black" }}>
             <strong>Más Noticias</strong>
-          </p>
+          </small>
         </Link>
       </section>
     </div>

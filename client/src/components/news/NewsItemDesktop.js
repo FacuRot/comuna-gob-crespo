@@ -7,7 +7,7 @@ const NewsItemDesktop = props => {
 
   return (
     <div className="news-container">
-      <div>
+      <div style={{ flexGrow: "2", margin: "10px" }}>
         {newsArray.length === 0 ? (
           <h2>No hay Noticias</h2>
         ) : (
@@ -25,7 +25,7 @@ const NewsItemDesktop = props => {
                   {new Date(item.date).getFullYear()}
                 </p>
                 <h3>{item.title}</h3>
-                <p style={{ color: "grey" }}>{item.text.substr(0, 200)}...</p>
+                <p style={{ color: "black" }}>{item.text.substr(0, 150)}...</p>
                 <Link
                   to={`/noticia/${item._id}`}
                   className="btn"
@@ -34,7 +34,7 @@ const NewsItemDesktop = props => {
                   Seguir Leyendo
                 </Link>
               </section>
-              <hr style={{ color: "black" }} />
+              <hr style={{ display: "block", borderStyle: "inset", borderWidth: "1px", color: "black" }} />
             </div>
           ))
         )}
