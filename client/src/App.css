@@ -235,10 +235,11 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 0rem 0.5rem;
-  position: fixed;
   z-index: 1;
   width: 100%;
   top: 0;
+
+  background-color: white;
 }
 
 .navbar div {
@@ -252,7 +253,7 @@ button {
 }
 
 .navbar a {
-  color: #fff;
+  color: black;
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
@@ -271,14 +272,33 @@ button {
   padding-right: 0.45rem;
 }
 
+#desktopNav {
+  background-color: #eeeded;
+}
+
+#desktopNav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#desktopNav ul li {
+  padding: 0.45rem;
+  margin: 0 0.25rem;
+}
+
 #movilNav {
   display: none;
 }
 
+#navSocialLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 /* Landing Page */
 .landing {
-  position: relative;
-  height: 100vh;
+  height: 90vh;
 }
 
 .landing-movil {
@@ -289,7 +309,6 @@ button {
 .banner {
   position: relative;
   height: 20vh;
-  margin-top: 110px;
   background: var(--purple-gradient);
 
   display: flex;
@@ -328,7 +347,7 @@ button {
 .news-container {
   max-width: 90%;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-around;
   padding-top: 5rem;
@@ -438,9 +457,9 @@ table tr td {
   }
 
   .landing-movil {
-    display: block;
+    display: flex;
     position: relative;
-    height: 100vh;
+    height: 85vh;
   }
 
   /* Navbar */
@@ -463,6 +482,10 @@ table tr td {
 
   #movilNav:hover {
     cursor: pointer;
+  }
+
+  #navSocialLinks {
+    display: none;
   }
 
   .movilList ul {
