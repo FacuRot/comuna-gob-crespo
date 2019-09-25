@@ -25,6 +25,13 @@ const Dashboard = ({ auth: { loading, user } }) => {
         }}
       >
         <Link
+          to="/change-password"
+          className="btn text-center"
+          style={{ marginTop: "10px" }}
+        >
+          Cambiar mi Contraseña
+        </Link>
+        <Link
           to="/create-news"
           className="btn text-center"
           style={{ marginTop: "10px" }}

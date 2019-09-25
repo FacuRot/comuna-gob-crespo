@@ -67,3 +67,23 @@ export const logout = () => dispatch => {
     type: LOGOUT
   });
 };
+
+// Change Password
+export const changePassword = (formData, history) => async dispatch => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
+
+  try {
+    await axios.post("/api/users/changepassword", formData, config);
+    history.push("/dashboard");
+  } catch (error) {
+    const errors = error.response.data.errors;
+
+    if (errors) {
+      errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
+    }
+  }
+};

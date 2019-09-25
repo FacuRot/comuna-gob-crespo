@@ -9,6 +9,7 @@ import Footer from "./components/layout/Footer";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import CreateNews from "./components/create-news/CreateNews";
 import CreateEvents from "./components/create-events/CreateEvents";
+import ChangePassword from "./components/change-password/ChangePassword";
 import News from "./components/news/News";
 import New from "./components/new/New";
 import Comuna from "./components/comuna/Comuna";
@@ -45,6 +46,11 @@ const App = () => {
                 exact
                 path="/create-events"
                 component={CreateEvents}
+              />
+              <PrivateRoute
+                exact
+                path="/change-password"
+                component={ChangePassword}
               />
               <Route exact path="/news" component={News} />
               <Route exact path="/noticia/:id" component={New} />

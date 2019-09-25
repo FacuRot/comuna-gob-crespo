@@ -63,9 +63,14 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const today = new Date();
 
   const AuthLink = (
-    <a onClick={logout} href="#!">
-      <i className="fas fa-sign-out-alt" /> Salir
-    </a>
+    <div>
+      <a onClick={logout} href="#!">
+        <i className="fas fa-sign-out-alt" /> Salir
+      </a>
+      <Link to="/dashboard">
+        <i className="fas fa-user" /> Panel de control
+      </Link>
+    </div>
   );
 
   var displayList = shouldDisplayList ? (
