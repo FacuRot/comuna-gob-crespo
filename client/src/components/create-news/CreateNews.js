@@ -54,7 +54,7 @@ class CreateNews extends Component {
       <div className="container">
         <Alert />
         <h1 className="large text-primary">Redacta una noticia</h1>
-        <p className="lead" style={{ color: "white" }}>
+        <p className="lead">
           <img
             src={Noticias}
             alt="Noticias"
@@ -66,7 +66,7 @@ class CreateNews extends Component {
           />
           Completa los campos para poder publicar la noticia
         </p>
-        <small style={{ color: "white" }}>* = campos requeridos</small>
+        <small>* = campos requeridos</small>
         <div className="text-center">
           <img
             src={this.state.image}
@@ -81,7 +81,6 @@ class CreateNews extends Component {
         </div>
         <small
           style={{
-            color: "white",
             width: "100%",
             display: "flex",
             justifyContent: "center"
@@ -119,7 +118,7 @@ class CreateNews extends Component {
               value={this.state.title}
               onChange={this.onChange}
             />
-            <small className="form-text" style={{ color: "white" }}>
+            <small className="form-text">
               Un texto corto que sirva de titulo para la noticia
             </small>
           </div>
@@ -131,9 +130,7 @@ class CreateNews extends Component {
               value={this.state.text}
               onChange={this.onChange}
             />
-            <small className="form-text" style={{ color: "white" }}>
-              Redacta aqui la noticia
-            </small>
+            <small className="form-text">Redacta aqui la noticia</small>
           </div>
 
           <div className="form-group">
@@ -144,7 +141,7 @@ class CreateNews extends Component {
               value={this.state.font}
               onChange={this.onChange}
             />
-            <small className="form-text" style={{ color: "white" }}>
+            <small className="form-text">
               Fuente o fuentes de donde se obtuvieron los datos que se publican.
             </small>
           </div>

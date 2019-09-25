@@ -34,12 +34,11 @@ const CreateEvents = ({ createEvent, history }) => {
     <div className="container">
       <Alert />
       <h1 className="large text-primary">Crea un Evento</h1>
-      <p className="lead" style={{ color: "white" }}>
+      <p className="lead">
         <img
           src={Agenda}
           alt="Agenda"
           style={{
-            color: "white",
             width: "30px",
             height: "30px",
             marginRight: "5px"
@@ -47,7 +46,7 @@ const CreateEvents = ({ createEvent, history }) => {
         />
         Completa los campos para poder publicar un nuevo evento
       </p>
-      <small style={{ color: "white" }}>* = campos requeridos</small>
+      <small>* = campos requeridos</small>
       <form className="form" onSubmit={e => onSubmit(e)} method="POST">
         <div className="form-group">
           <input
@@ -57,7 +56,7 @@ const CreateEvents = ({ createEvent, history }) => {
             value={title}
             onChange={e => onChange(e)}
           />
-          <small className="form-text" style={{ color: "white" }}>
+          <small className="form-text">
             Un texto corto que sirva de titulo para el evento
           </small>
         </div>
@@ -69,7 +68,7 @@ const CreateEvents = ({ createEvent, history }) => {
             value={text}
             onChange={e => onChange(e)}
           />
-          <small className="form-text" style={{ color: "white" }}>
+          <small className="form-text">
             De una descripcion breve del evento
           </small>
         </div>
@@ -82,9 +81,7 @@ const CreateEvents = ({ createEvent, history }) => {
             value={date}
             onChange={e => onChange(e)}
           />
-          <small className="form-text" style={{ color: "white" }}>
-            Fecha del evento
-          </small>
+          <small className="form-text">Fecha del evento</small>
         </div>
 
         <input type="submit" value="Submit" className="btn my-1" />

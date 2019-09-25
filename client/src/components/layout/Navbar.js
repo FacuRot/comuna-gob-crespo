@@ -110,7 +110,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   ) : null;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div>
       <div id="desktopNav">
         <div
           className="bg-gradient"
@@ -158,7 +158,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           <i
             className="fas fa-bars fa-2x"
             onClick={() => setShouldDisplayList(!shouldDisplayList)}
-            style={{ color: "black", paddingTop: "10px" }}
+            style={{ color: "black", paddingTop: "10px", marginRight: "7px" }}
           />
           {displayList}
         </div>

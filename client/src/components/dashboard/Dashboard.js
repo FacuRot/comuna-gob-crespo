@@ -12,10 +12,10 @@ const Dashboard = ({ auth: { loading, user } }) => {
   ) : (
     <div className="container">
       <h1 className="large text-primary">Dashboard</h1>
-      <p className="lead" style={{ color: "white" }}>
+      <p className="lead">
         <i className="fas fa-user" /> Bienvenido/a {user && user.name}
       </p>
-      <p style={{ color: "white", marginTop: "30px" }}>
+      <p style={{ marginTop: "30px" }}>
         Estas son las acciones que puedes realizar:
       </p>
       <div
