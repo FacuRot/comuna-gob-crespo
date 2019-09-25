@@ -29,10 +29,8 @@ const Login = ({ login, isAuthenticated }) => {
   return (
     <div className="container">
       <Alert />
-      <h1 className="large" style={{ color: "white" }}>
-        Ingresar
-      </h1>
-      <p className="lead" style={{ color: "white" }}>
+      <h1 className="large">Ingresar</h1>
+      <p className="lead">
         <i className="fas fa-user" /> Logueate con tu cuenta para modificar
         contenido
       </p>
