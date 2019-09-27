@@ -253,23 +253,17 @@ button {
 }
 
 .navbar a {
-  color: black;
+  color: #eeeded;
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
 
 .navbar a:hover {
-  color: var(--primary-color);
+  color: #4c316d;
 }
 
 .navbar .welcome span {
   margin-right: 0.6rem;
-}
-
-.navbar p {
-  color: #fff;
-  margin-right: 0.25rem;
-  padding-right: 0.45rem;
 }
 
 #desktopNav {
@@ -399,6 +393,11 @@ table tr td {
   justify-content: space-between;
   align-items: center;
   background-color: #eeeded;
+}
+
+.footerImage {
+  height: 60px;
+  width: auto;
 }
 
 .icon {
@@ -552,10 +551,28 @@ table tr td {
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .footer a {
     margin-top: 15px;
+  }
+
+  .footer p {
+    font-size: 12px;
+  }
+
+  .footerImage {
+    height: 50px;
+    width: auto;
+  }
+
+  #footerTextSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   /* More News */
@@ -566,6 +583,11 @@ table tr td {
   /* Events Arrows */
   .eventArrow {
     display: none;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
   }
 }
 

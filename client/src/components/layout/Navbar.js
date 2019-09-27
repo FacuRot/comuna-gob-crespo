@@ -78,8 +78,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <ul>
         <li>
           <Link
+            to="/"
+            onClick={() => setShouldDisplayList(!shouldDisplayList)}
+            style={{ color: "black" }}
+          >
+            <strong>INICIO</strong>
+          </Link>
+        </li>
+        <li>
+          <Link
             to="/comuna"
             onClick={() => setShouldDisplayList(!shouldDisplayList)}
+            style={{ color: "black" }}
           >
             <strong>COMUNA</strong>
           </Link>
@@ -88,17 +98,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           <Link
             to="/news"
             onClick={() => setShouldDisplayList(!shouldDisplayList)}
+            style={{ color: "black" }}
           >
             <strong>NOTICIAS</strong>
           </Link>
         </li>
         <li>
-          <a href="/">
+          <a href="/" style={{ color: "black" }}>
             <strong>TRAMITES</strong>
           </a>
         </li>
         <li>
-          <a href="/">
+          <a href="/" style={{ color: "black" }}>
             <strong>INSTITUCIONES</strong>
           </a>
         </li>
@@ -106,6 +117,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           <Link
             to="/contacto"
             onClick={() => setShouldDisplayList(!shouldDisplayList)}
+            style={{ color: "black" }}
           >
             <strong>CONTACTO</strong>
           </Link>
@@ -115,7 +127,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   ) : null;
 
   return (
-    <div>
+    <nav>
       <div id="desktopNav">
         <div
           className="bg-gradient"
@@ -135,7 +147,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           </p>
         </div>
       </div>
-      <nav className="navbar">
+      <div className="navbar">
         <Link to="/">
           <img
             src={Logo}
@@ -147,7 +159,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             }}
           />
         </Link>
-        <div id="navSocialLinks" style={{ backgroundColor: "white" }}>
+        <div id="navSocialLinks">
           <a href="https://www.instagram.com/comunagcrespo" target="blank">
             <i className="fab fa-instagram fa-2x"></i>
           </a>
@@ -168,7 +180,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           {displayList}
         </div>
         {!loading && <Fragment>{isAuthenticated && AuthLink}</Fragment>}
-      </nav>
+      </div>
       <div
         id="desktopNav"
         ref={navRef}
@@ -176,10 +188,16 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           position: `${position}`,
           width: "100%",
           zIndex: "10",
-          top: `${top}`
+          top: `${top}`,
+          backgroundColor: "#eeeded"
         }}
       >
         <ul>
+          <li>
+            <Link to="/" style={{ color: "black" }}>
+              <strong>INICIO</strong>
+            </Link>
+          </li>
           <li>
             <Link to="/comuna" style={{ color: "black" }}>
               <strong>COMUNA</strong>
@@ -207,7 +225,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 

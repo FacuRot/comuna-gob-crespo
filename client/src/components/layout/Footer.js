@@ -5,7 +5,10 @@ const Footer = () => {
   return (
     <div style={{ width: "100%" }}>
       <div className="footer">
-        <section style={{ marginTop: "10px", marginBottom: "10px" }}>
+        <section
+          id="footerTextSection"
+          style={{ marginTop: "10px", marginBottom: "10px" }}
+        >
           <section
             style={{
               display: "flex",
@@ -32,14 +35,9 @@ const Footer = () => {
           </section>
         </section>
         <section style={{ display: "flex", marginRight: "10px" }}>
-          <img
-            src={LogoComuna}
-            alt="Comuna"
-            style={{ width: "110px", height: "auto" }}
-          />
+          <img src={LogoComuna} alt="Comuna" className="footerImage" />
         </section>
       </div>
-      <div className="bg-gradient" style={{ height: "15px" }}></div>
     </div>
   );
 };
