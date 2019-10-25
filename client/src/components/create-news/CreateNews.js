@@ -46,7 +46,7 @@ class CreateNews extends Component {
       postImage: this.img.files[0]
     };
 
-    this.props.createNews(newsData, this.props.history);
+    this.props.createNews(this.props.match.params.id ,newsData, this.props.history);
   }
 
   render() {

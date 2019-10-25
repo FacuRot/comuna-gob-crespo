@@ -2,8 +2,8 @@ import axios from "axios";
 import { setAlert } from "./alert";
 import { GET_NEWS, GET_NEW, GET_MORE_NEWS } from "./types";
 
-// Create a new
-export const createNews = (newsData, history) => async dispatch => {
+// Create a new or update one
+export const createNews = (id, newsData, history) => async dispatch => {
   // build form data
   const form = Object.keys(newsData).reduce((f, k) => {
     f.append(k, newsData[k]);
@@ -11,7 +11,7 @@ export const createNews = (newsData, history) => async dispatch => {
   }, new FormData());
 
   try {
-    const res = await axios.post("api/posts", form);
+    const res = await axios.post(`/api/posts/${id}`, form);
     history.push("/dashboard");
   } catch (err) {
     const errors = err.response.data.errors;

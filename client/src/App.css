@@ -1,7 +1,7 @@
 :root {
   --primary-color: #17a2b8;
   --dark-color: #343a40;
-  --light-color: #f4f4f4;
+  --light-color: #cccccc;
   --danger-color: #dc3545;
   --success-color: #28a745;
   --purple-gradient: linear-gradient(to right, #4c316d, #8f5e95);
@@ -179,6 +179,11 @@ img {
   border-radius: 3px;
 }
 
+.btn-light {
+  background: var(--light-color);
+  color: #333;
+}
+
 .btn-info:hover {
   opacity: 0.8;
 }
@@ -302,11 +307,24 @@ button {
 /* Banner */
 .banner {
   position: relative;
-  height: 20vh;
+  height: 35vh;
   background: var(--purple-gradient);
 
   display: flex;
   align-items: center;
+}
+
+.banner-blue {
+  height: 25vh;
+  background-image: linear-gradient(to right, #004a98, #0c84c7);
+}
+
+.banner-talleres {
+  background: url("./img/titulo-01.jpg") center center/cover;
+}
+
+.banner-vial {
+  background: url("./img/SEG-01.jpg") center center/cover;
 }
 
 /* Iconsbar */
@@ -361,6 +379,18 @@ button {
   width: 400px;
   height: auto;
   margin-right: 20px;
+}
+
+/* Talleres */
+.taller-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 5rem;
+}
+
+.taller-container div {
+  flex-grow: 1;
 }
 
 #imgNoticiaIndividual {

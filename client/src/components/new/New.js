@@ -1,12 +1,18 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { getNewById, getMoreNews } from "../../actions/news";
 import NoticiasIcono from "../newsInLanding/noticiasIcono.png";
 import Links from "../links/Links";
 import MoreNews from "./MoreNews";
 
-const New = ({ getNewById, news: { newItem, loading }, match }) => {
+const New = ({
+  getNewById,
+  news: { newItem, loading },
+  match,
+  auth: { isAuthenticated }
+}) => {
   useEffect(() => {
     getNewById(match.params.id);
   }, [getNewById, match]);
@@ -72,6 +78,14 @@ const New = ({ getNewById, news: { newItem, loading }, match }) => {
             >
               Fuente: {newItem.font}
             </p>
+            {isAuthenticated && (
+              <Link
+                to={`/create-news/${newItem._id}`}
+                className="btn btn-light"
+              >
+                Editar Noticia
+              </Link>
+            )}
           </div>
           <Links />
         </div>
@@ -84,11 +98,13 @@ const New = ({ getNewById, news: { newItem, loading }, match }) => {
 
 New.propTypes = {
   news: PropTypes.object.isRequired,
-  getNewById: PropTypes.func.isRequired
+  getNewById: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  news: state.news
+  news: state.news,
+  auth: state.auth
 });
 
 export default connect(

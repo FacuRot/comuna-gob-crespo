@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Login from "./components/auth/Login";
-import Alert from "./components/layout/Alert";
 import Dashboard from "./components/dashboard/Dashboard";
 import Footer from "./components/layout/Footer";
 import PrivateRoute from "./components/routing/PrivateRoute";
@@ -14,6 +13,13 @@ import News from "./components/news/News";
 import New from "./components/new/New";
 import Comuna from "./components/comuna/Comuna";
 import Contact from "./components/contact/Contact";
+import AddTaller from "./components/add-taller/AddTaller";
+import Talleres from "./components/talleres/Talleres.js";
+import TallerItem from "./components/talleres/TallerItem.js";
+import Vial from "./components/seguridad-vial/Vial";
+import LicenciaConducir from "./components/tramites/LicenciaConducir";
+import SolicitudAlta from "./components/tramites/SolicitudAlta";
+import TasaRural from "./components/tramites/TasaRural";
 // Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -41,7 +47,11 @@ const App = () => {
             <Switch>
               <Route exact path="/login" component={Login} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              <PrivateRoute exact path="/create-news" component={CreateNews} />
+              <PrivateRoute
+                exact
+                path="/create-news/:id"
+                component={CreateNews}
+              />
               <PrivateRoute
                 exact
                 path="/create-events"
@@ -52,10 +62,21 @@ const App = () => {
                 path="/change-password"
                 component={ChangePassword}
               />
+              <PrivateRoute exact path="/add-taller" component={AddTaller} />
               <Route exact path="/news" component={News} />
               <Route exact path="/noticia/:id" component={New} />
               <Route exact path="/comuna" component={Comuna} />
               <Route exact path="/contacto" component={Contact} />
+              <Route exact path="/talleres" component={Talleres} />
+              <Route exact path="/taller/:id" component={TallerItem} />
+              <Route exact path="/seguridad-vial" component={Vial} />
+              <Route
+                exact
+                path="/licencia-conducir"
+                component={LicenciaConducir}
+              />
+              <Route exact path="/solicitud-alta" component={SolicitudAlta} />
+              <Route exact path="/tasa-rural" component={TasaRural} />
             </Switch>
           </section>
           <Footer />
