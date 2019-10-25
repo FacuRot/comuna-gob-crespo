@@ -3,17 +3,18 @@ const router = express.Router();
 const { check, validationResult } = require("express-validator");
 const auth = require("../../middleware/auth");
 const upload = require("../../services/file-upload");
+const mongoose = require("mongoose");
 
 const Post = require("../../models/Post");
 const User = require("../../models/User");
 
 var singleUpload;
 
-// @route   POST api/posts
+// @route   POST api/posts/:id
 // @desc    Create a post
 // @access  private
 router.post(
-  "/",
+  "/:id",
   [
     (singleUpload = upload.single("postImage")),
     auth,
@@ -44,7 +45,7 @@ router.post(
         path = req.file.path;
       }
 
-      const newPost = new Post({
+      const newPost = {
         title: req.body.title,
         text: req.body.text,
         font: req.body.font,
@@ -55,9 +56,30 @@ router.post(
           filename: filename,
           path: path
         }
-      });
+      };
 
-      const post = await newPost.save();
+      let id = req.params.id;
+      if (req.params.id === 0) {
+        id = mongoose.Types.ObjectId(req.params.id);
+      }
+
+      // Update post
+      let post = await Post.findById(id);
+
+      if (post) {
+        post = await Post.findOneAndUpdate(
+          { _id: id },
+          { $set: newPost },
+          { new: true }
+        );
+
+        return res.status(200).json(post);
+      }
+
+      // Create
+      post = new Post(newPost);
+
+      await post.save();
 
       singleUpload(req, res, function(err, some) {
         if (err) {

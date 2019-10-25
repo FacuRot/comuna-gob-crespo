@@ -32,7 +32,7 @@ const Dashboard = ({ auth: { loading, user } }) => {
           Cambiar mi Contraseña
         </Link>
         <Link
-          to="/create-news"
+          to="/create-news/0"
           className="btn text-center"
           style={{ marginTop: "10px" }}
         >
@@ -44,6 +44,13 @@ const Dashboard = ({ auth: { loading, user } }) => {
           style={{ marginTop: "10px" }}
         >
           Crear un Evento
+        </Link>
+        <Link
+          to="/add-taller"
+          className="btn text-center"
+          style={{ marginTop: "10px" }}
+        >
+          Añadir un Taller
         </Link>
       </div>
     </div>

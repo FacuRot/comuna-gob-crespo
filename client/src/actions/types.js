@@ -9,3 +9,5 @@ export const GET_NEWS = "GET_NEWS";
 export const GET_NEW = "GET_NEW";
 export const GET_EVENTS = "GET_EVENTS";
 export const GET_MORE_NEWS = "GET_MORE_NEWS";
+export const GET_TALLERES = "GET_TALLERES";
+export const GET_TALLER_ITEM = "GET_TALLER_ITEM";
