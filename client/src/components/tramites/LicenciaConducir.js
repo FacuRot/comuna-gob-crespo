@@ -11,7 +11,7 @@ const LicenciaConducir = () => (
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-start",
-          paddingLeft: "1.5rem",
+          paddingLeft: "5rem",
           color: "white"
         }}
       >
@@ -25,7 +25,7 @@ const LicenciaConducir = () => (
       </section>
     </div>
     <div className="news-container">
-      <div style={{ width: "800px", margin: "15px", marginBottom: "3rem" }}>
+      <div style={{ width: "90%", margin: "15px", marginBottom: "3rem" }}>
         <h3 style={{ marginLeft: "5px" }}>Requisitos</h3>
         <p style={{ marginLeft: "5px" }}>
           Concurrir al Juzgado de Faltas: Días Marte y Jueves

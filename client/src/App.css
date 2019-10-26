@@ -319,11 +319,18 @@ button {
   background-image: linear-gradient(to right, #004a98, #0c84c7);
 }
 
+.banner-red {
+  height: 25vh;
+  background-image: linear-gradient(to right, #e1062d, #e74b65);
+}
+
 .banner-talleres {
+  height: 44vh;
   background: url("./img/titulo-01.jpg") center center/cover;
 }
 
 .banner-vial {
+  height: 44vh;
   background: url("./img/SEG-01.jpg") center center/cover;
 }
 
@@ -361,7 +368,7 @@ button {
   margin: auto;
   margin-top: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding-top: 5rem;
 }
 
@@ -391,6 +398,12 @@ button {
 
 .taller-container div {
   flex-grow: 1;
+}
+
+.tallerItem {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 3rem;
 }
 
 #imgNoticiaIndividual {
@@ -574,6 +587,11 @@ table tr td {
 
   .NoticiaIndividual {
     padding-left: 7px;
+  }
+
+  /* Taller */
+  .tallerItem {
+    width: 90%;
   }
 
   /* Footer */

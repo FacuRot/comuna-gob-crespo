@@ -16,8 +16,6 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const handleScroll = () => {
     var sticky = navRef.current.offsetTop;
-    console.log(window.pageYOffset);
-    console.log(sticky);
 
     if (window.pageYOffset > sticky) {
       setPosition("fixed");
@@ -106,11 +104,6 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         <li>
           <a href="/" style={{ color: "black" }}>
             <strong>TRAMITES</strong>
-          </a>
-        </li>
-        <li>
-          <a href="/" style={{ color: "black" }}>
-            <strong>INSTITUCIONES</strong>
           </a>
         </li>
         <li>
@@ -211,11 +204,6 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           <li>
             <a href="/" style={{ color: "black" }}>
               <strong>TRAMITES</strong>
-            </a>
-          </li>
-          <li>
-            <a href="/" style={{ color: "black" }}>
-              <strong>INSTITUCIONES</strong>
             </a>
           </li>
           <li>

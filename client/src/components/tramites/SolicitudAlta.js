@@ -11,7 +11,7 @@ const SolicitudAlta = () => (
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-start",
-          paddingLeft: "1.5rem",
+          paddingLeft: "5rem",
           color: "white"
         }}
       >
@@ -25,7 +25,7 @@ const SolicitudAlta = () => (
       </section>
     </div>
     <div className="news-container">
-      <div style={{ width: "800px", margin: "15px", marginBottom: "3rem" }}>
+      <div style={{ width: "90%", margin: "15px", marginBottom: "3rem" }}>
         <h3 style={{ marginLeft: "5px" }}>Formularios</h3>
         <ol style={{ marginLeft: "5px" }}>
           <li style={{ marginLeft: "15px" }}>Solicitud de alta</li>
