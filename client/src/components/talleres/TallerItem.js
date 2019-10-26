@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getTallerById } from "../../actions/talleres";
 import { Link } from "react-router-dom";
 import LinksTalleres from "../links/LinksTalleres";
+import nenito from "./actividadicono-01.png";
 
 const TallerItem = ({
   match,
@@ -20,19 +21,25 @@ const TallerItem = ({
         <p>Cargando Contenido...</p>
       ) : (
         <div>
-          <div className="banner banner-talleres">
+          <div className="banner banner-red">
             <section
               style={{
                 width: "100%",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center",
+                justifyContent: "flex-start",
                 color: "white"
               }}
             >
+              <img
+                src={nenito}
+                alt="taller"
+                style={{ width: "40px", height: "auto", marginLeft: "5rem" }}
+              />
               <h1
                 style={{
-                  fontSize: "40px"
+                  fontSize: "40px",
+                  marginLeft: "1rem"
                 }}
               >
                 {tallerItem.name}
@@ -40,9 +47,7 @@ const TallerItem = ({
             </section>
           </div>
           <div className="news-container">
-            <div
-              style={{ width: "800px", margin: "15px", marginBottom: "3rem" }}
-            >
+            <div className="tallerItem">
               <img
                 src={tallerItem.tallerImage.filename}
                 alt={tallerItem.name}

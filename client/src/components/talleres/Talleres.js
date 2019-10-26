@@ -59,7 +59,7 @@ const Talleres = ({ getTalleres, talleres: { loading, talleres } }) => {
                 </section>
                 <section
                   style={{
-                    height: "100px",
+                    height: "70px",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "flex-end",
@@ -68,7 +68,11 @@ const Talleres = ({ getTalleres, talleres: { loading, talleres } }) => {
                   }}
                 >
                   <strong style={{ color: "#e1052d" }}>{taller.name}</strong>
-                  <Link to={`/taller/${taller._id}`} className="btn btn-light">
+                  <Link
+                    to={`/taller/${taller._id}`}
+                    className="btn btn-light"
+                    style={{ width: "40%" }}
+                  >
                     leer más
                   </Link>
                 </section>
