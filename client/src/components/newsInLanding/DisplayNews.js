@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getNews } from "../../actions/news";
-import newsIcon from "./noticiasIcono.png";
+import newsIcon from "./NOTICIAS-black.png";
 import NewsDesktop from "./NewsDesktop";
 import NewsMobile from "./NewsMobile";
 
