@@ -324,6 +324,14 @@ button {
   background-image: linear-gradient(to right, #e1062d, #e74b65);
 }
 
+.banner-red section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+}
+
 .banner-talleres {
   height: 44vh;
   background: url("./img/titulo-01.jpg") center center/cover;
@@ -636,6 +644,15 @@ table tr td {
   /* Tables */
   table {
     width: 100%;
+  }
+
+  .hide-sm {
+    display: none;
+  }
+
+  /* Banner Red */
+  .banner-red section {
+    text-align: center;
   }
 }
 

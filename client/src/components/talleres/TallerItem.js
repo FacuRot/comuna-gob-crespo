@@ -22,24 +22,21 @@ const TallerItem = ({
       ) : (
         <div>
           <div className="banner banner-red">
-            <section
-              style={{
-                width: "100%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                color: "white"
-              }}
-            >
+            <section>
               <img
                 src={nenito}
                 alt="taller"
-                style={{ width: "40px", height: "auto", marginLeft: "5rem" }}
+                className="hide-sm"
+                style={{
+                  width: "3rem",
+                  height: "auto",
+                  marginLeft: "5rem",
+                  marginRight: "2rem"
+                }}
               />
               <h1
                 style={{
-                  fontSize: "40px",
-                  marginLeft: "1rem"
+                  fontSize: "2rem"
                 }}
               >
                 {tallerItem.name}
