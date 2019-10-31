@@ -374,7 +374,6 @@ button {
 .news-container {
   max-width: 90%;
   margin: auto;
-  margin-top: 20px;
   display: flex;
   justify-content: space-evenly;
   padding-top: 5rem;
@@ -466,9 +465,8 @@ table tr td {
 /* Texto sobre Imagen */
 .textOverImage {
   position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 4px;
+  width: 15rem;
+  height: 15rem;
   background-size: 190%;
   background-position: center;
   background-repeat: no-repeat;
@@ -487,7 +485,7 @@ table tr td {
 
 .divOverImage {
   height: 100%;
-  padding: 8px;
+  padding: 1rem;
   opacity: 0;
   color: #fff;
 
@@ -651,8 +649,19 @@ table tr td {
   }
 
   /* Banner Red */
+  .banner-talleres {
+    height: 20vh;
+    background: url("./img/banner-red-phone.jpg") center center/cover;
+  }
+
   .banner-red section {
     text-align: center;
+  }
+
+  /* Banner Vial */
+  .banner-vial {
+    height: 25vh;
+    background: url("./img/banner-yellow-phone.jpg") center center/cover;
   }
 }
 

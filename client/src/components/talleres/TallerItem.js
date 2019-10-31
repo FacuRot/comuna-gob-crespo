@@ -22,7 +22,7 @@ const TallerItem = ({
       ) : (
         <div>
           <div className="banner banner-red">
-            <section>
+            <section style={{ maxWidth: "75%", margin: "auto" }}>
               <img
                 src={nenito}
                 alt="taller"
@@ -30,8 +30,7 @@ const TallerItem = ({
                 style={{
                   width: "3rem",
                   height: "auto",
-                  marginLeft: "5rem",
-                  marginRight: "2rem"
+                  marginRight: "1rem"
                 }}
               />
               <h1

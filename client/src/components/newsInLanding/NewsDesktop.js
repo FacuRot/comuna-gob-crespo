@@ -47,23 +47,22 @@ const NewsDesktop = props => {
           </Link>
         </section>
       </section>
-      <section style={{ display: "flex" }}>
-        {news.slice(1, 5).map((item, i) => (
+      <section style={{ display: "flex", justifyContent: "space-between" }}>
+        {news.slice(1, 4).map((item, i) => (
           <Link
             key={item._id}
             to={`/noticia/${item._id}`}
             style={{
-              width: "270px",
+              width: "18rem",
               display: "flex",
               flexDirection: "column",
-              cursor: "pointer",
-              marginRight: "5px"
+              cursor: "pointer"
             }}
           >
             <img
               src={item.image.filename}
               alt="Noticia"
-              style={{ height: "190px", width: "240px" }}
+              style={{ width: "18rem" }}
             />
             <small style={{ color: "black" }}>
               <strong>{item.title}</strong>
@@ -73,7 +72,7 @@ const NewsDesktop = props => {
         <Link
           to="/news"
           style={{
-            width: "270px",
+            width: "18rem",
             display: "flex",
             flexDirection: "column"
           }}
@@ -81,7 +80,7 @@ const NewsDesktop = props => {
           <img
             src={NewsIcono}
             alt="Noticia"
-            style={{ height: "190px", width: "240px" }}
+            style={{ width: "18rem" }}
           />
           <small style={{ color: "black" }}>
             <strong>Más Noticias</strong>
