@@ -23,7 +23,7 @@ const Talleres = ({ getTalleres, talleres: { loading, talleres } }) => {
         >
           <h1
             style={{
-              fontSize: "40px"
+              fontSize: "2rem"
             }}
           >
             Talleres y Actividades

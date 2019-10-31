@@ -78,6 +78,7 @@ const New = ({
             >
               Fuente: {newItem.font}
             </p>
+            <MoreNews />
             {isAuthenticated && (
               <Link
                 to={`/create-news/${newItem._id}`}
@@ -90,8 +91,6 @@ const New = ({
           <Links />
         </div>
       )}
-
-      <MoreNews />
     </div>
   );
 };

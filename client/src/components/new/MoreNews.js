@@ -8,10 +8,16 @@ const MoreNews = ({ news: { newsArray, loading } }) => {
   return (
     <div
       className="moreNewsDesktop"
-      style={{ paddingTop: "60px", paddingBottom: "60px", paddingLeft: "60px" }}
+      style={{ paddingTop: "3rem", paddingBottom: "3rem", width: "100%" }}
     >
       <h3>Tambien te puede interesar: </h3>
-      <div style={{ display: "flex" }}>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-between"
+        }}
+      >
         {loading || newsArray === [] ? (
           <h3>Cargando Noticias Interesantes...</h3>
         ) : (
@@ -25,11 +31,11 @@ const MoreNews = ({ news: { newsArray, loading } }) => {
             >
               <div className="divOverImage">
                 <h3>{item.title}</h3>
-                <p>{item.text.substr(0, 100)}</p>
+                <p>{item.text.substr(0, 80)}</p>
                 <Link
                   to={`/noticia/${item._id}`}
                   className="btn"
-                  style={{ marginTop: "20px" }}
+                  style={{ marginTop: "0.5rem" }}
                 >
                   Seguir Leyendo
                 </Link>

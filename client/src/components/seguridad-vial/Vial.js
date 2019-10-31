@@ -17,7 +17,7 @@ const Vial = () => (
       >
         <h1
           style={{
-            fontSize: "40px"
+            fontSize: "2rem"
           }}
         >
           YO ME SUMO POR LA <br /> SEGURIDAD VIAL
