@@ -74,13 +74,25 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const tramites = shouldDisplayTramites && (
     <section className="tramites">
-      <Link to="/licencia-conducir" style={{ color: "black" }}>
+      <Link
+        to="/licencia-conducir"
+        style={{ color: "black" }}
+        onClick={() => setShouldDisplayList(!shouldDisplayList)}
+      >
         Lic. Conducir
       </Link>
-      <Link to="/solicitud-alta" style={{ color: "black" }}>
+      <Link
+        to="/solicitud-alta"
+        style={{ color: "black" }}
+        onClick={() => setShouldDisplayList(!shouldDisplayList)}
+      >
         Sol. Alta
       </Link>
-      <Link to="/tasa-rural" style={{ color: "black" }}>
+      <Link
+        to="/tasa-rural"
+        style={{ color: "black" }}
+        onClick={() => setShouldDisplayList(!shouldDisplayList)}
+      >
         Tasa Rural
       </Link>
       <a
@@ -91,6 +103,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           color: "black",
           textDecoration: "none"
         }}
+        onClick={() => setShouldDisplayList(!shouldDisplayList)}
       >
         Liquidaciones
       </a>
