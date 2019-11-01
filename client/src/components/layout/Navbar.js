@@ -10,6 +10,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     window.addEventListener("scroll", handleScroll);
   }, []);
   const [shouldDisplayList, setShouldDisplayList] = useState(false);
+  const [shouldDisplayTramites, setShouldDisplayTramites] = useState(false);
   const [position, setPosition] = useState("static");
   const [top, setTop] = useState();
   const [navRef, setRef] = useState(React.createRef());
@@ -71,6 +72,31 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     </div>
   );
 
+  const tramites = shouldDisplayTramites && (
+    <section className="tramites">
+      <Link to="/licencia-conducir" style={{ color: "black" }}>
+        Lic. Conducir
+      </Link>
+      <Link to="/solicitud-alta" style={{ color: "black" }}>
+        Sol. Alta
+      </Link>
+      <Link to="/tasa-rural" style={{ color: "black" }}>
+        Tasa Rural
+      </Link>
+      <a
+        href="http://gcrespo.boletaweb.com.ar"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          color: "black",
+          textDecoration: "none"
+        }}
+      >
+        Liquidaciones
+      </a>
+    </section>
+  );
+
   var displayList = shouldDisplayList ? (
     <section className="movilList">
       <ul>
@@ -102,10 +128,19 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           </Link>
         </li>
         <li>
-          <a href="/" style={{ color: "black" }}>
-            <strong>TRAMITES</strong>
-          </a>
+          <span
+            style={{ color: "black" }}
+            onClick={() => setShouldDisplayTramites(!shouldDisplayTramites)}
+          >
+            <strong>TRAMITES</strong>{" "}
+            <i
+              className={`fas ${
+                shouldDisplayTramites ? "fa-angle-up" : "fa-angle-down"
+              } fa-lg`}
+            />
+          </span>
         </li>
+        {tramites}
         <li>
           <Link
             to="/contacto"
@@ -202,9 +237,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             </Link>
           </li>
           <li>
-            <a href="/" style={{ color: "black" }}>
-              <strong>TRAMITES</strong>
-            </a>
+            <span
+              style={{ color: "black" }}
+              onClick={() => setShouldDisplayTramites(!shouldDisplayTramites)}
+            >
+              <strong>TRAMITES</strong>{" "}
+              <i
+                className={`fas ${
+                  shouldDisplayTramites ? "fa-angle-up" : "fa-angle-down"
+                } fa-lg`}
+              />
+            </span>
+            {tramites}
           </li>
           <li>
             <Link to="/contacto" style={{ color: "black" }}>
