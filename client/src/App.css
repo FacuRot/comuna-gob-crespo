@@ -285,6 +285,10 @@ button {
   margin: 0 0.25rem;
 }
 
+#desktopNav ul li:hover {
+  cursor: pointer;
+}
+
 #movilNav {
   display: none;
 }
@@ -293,6 +297,11 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.tramites {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Landing Page */
@@ -545,6 +554,18 @@ table tr td {
 
   .movilList ul li {
     margin-top: 1rem;
+    margin-right: 0;
+  }
+
+  .movilList ul li span {
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .tramites {
+    margin: 0;
+    padding: 0;
+    align-items: flex-end;
   }
 
   /* Iconsbar */
