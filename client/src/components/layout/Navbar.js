@@ -77,21 +77,30 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <Link
         to="/licencia-conducir"
         style={{ color: "black" }}
-        onClick={() => setShouldDisplayList(!shouldDisplayList)}
+        onClick={() => {
+          setShouldDisplayTramites(!shouldDisplayTramites);
+          setShouldDisplayList(!shouldDisplayList);
+        }}
       >
         Lic. Conducir
       </Link>
       <Link
         to="/solicitud-alta"
         style={{ color: "black" }}
-        onClick={() => setShouldDisplayList(!shouldDisplayList)}
+        onClick={() => {
+          setShouldDisplayTramites(!shouldDisplayTramites);
+          setShouldDisplayList(!shouldDisplayList);
+        }}
       >
         Sol. Alta
       </Link>
       <Link
         to="/tasa-rural"
         style={{ color: "black" }}
-        onClick={() => setShouldDisplayList(!shouldDisplayList)}
+        onClick={() => {
+          setShouldDisplayTramites(!shouldDisplayTramites);
+          setShouldDisplayList(!shouldDisplayList);
+        }}
       >
         Tasa Rural
       </Link>
@@ -103,7 +112,10 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           color: "black",
           textDecoration: "none"
         }}
-        onClick={() => setShouldDisplayList(!shouldDisplayList)}
+        onClick={() => {
+          setShouldDisplayTramites(!shouldDisplayTramites);
+          setShouldDisplayList(!shouldDisplayList);
+        }}
       >
         Liquidaciones
       </a>
