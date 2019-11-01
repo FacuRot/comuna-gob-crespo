@@ -11,6 +11,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   }, []);
   const [shouldDisplayList, setShouldDisplayList] = useState(false);
   const [shouldDisplayTramites, setShouldDisplayTramites] = useState(false);
+  const [shouldDisplayComuna, setShouldDisplayComuna] = useState(false);
   const [position, setPosition] = useState("static");
   const [top, setTop] = useState();
   const [navRef, setRef] = useState(React.createRef());
@@ -82,7 +83,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           setShouldDisplayList(!shouldDisplayList);
         }}
       >
-        Lic. Conducir
+        Licencia de Conducir
       </Link>
       <Link
         to="/solicitud-alta"
@@ -92,7 +93,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           setShouldDisplayList(!shouldDisplayList);
         }}
       >
-        Sol. Alta
+        Solicitud de Alta
       </Link>
       <Link
         to="/tasa-rural"
@@ -122,6 +123,41 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     </section>
   );
 
+  const comuna = shouldDisplayComuna && (
+    <section className="tramites">
+      <Link
+        to="/comuna"
+        style={{ color: "black" }}
+        onClick={() => {
+          setShouldDisplayComuna(!shouldDisplayComuna);
+          setShouldDisplayList(!shouldDisplayList);
+        }}
+      >
+        Nosotros
+      </Link>
+      <Link
+        to="/talleres"
+        style={{ color: "black" }}
+        onClick={() => {
+          setShouldDisplayComuna(!shouldDisplayComuna);
+          setShouldDisplayList(!shouldDisplayList);
+        }}
+      >
+        Talleres
+      </Link>
+      <Link
+        to="/seguridad-vial"
+        style={{ color: "black" }}
+        onClick={() => {
+          setShouldDisplayComuna(!shouldDisplayComuna);
+          setShouldDisplayList(!shouldDisplayList);
+        }}
+      >
+        Seguridad Vial
+      </Link>
+    </section>
+  );
+
   var displayList = shouldDisplayList ? (
     <section className="movilList">
       <ul>
@@ -135,14 +171,19 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           </Link>
         </li>
         <li>
-          <Link
-            to="/comuna"
-            onClick={() => setShouldDisplayList(!shouldDisplayList)}
+          <span
             style={{ color: "black" }}
+            onClick={() => setShouldDisplayComuna(!shouldDisplayComuna)}
           >
-            <strong>COMUNA</strong>
-          </Link>
+            <strong>COMUNA</strong>{" "}
+            <i
+              className={`fas ${
+                shouldDisplayComuna ? "fa-angle-up" : "fa-angle-down"
+              } fa-lg`}
+            />
+          </span>
         </li>
+        {comuna}
         <li>
           <Link
             to="/news"
@@ -252,9 +293,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             </Link>
           </li>
           <li>
-            <Link to="/comuna" style={{ color: "black" }}>
-              <strong>COMUNA</strong>
-            </Link>
+            <span
+              style={{ color: "black" }}
+              onClick={() => setShouldDisplayComuna(!shouldDisplayComuna)}
+            >
+              <strong>COMUNA</strong>{" "}
+              <i
+                className={`fas ${
+                  shouldDisplayComuna ? "fa-angle-up" : "fa-angle-down"
+                } fa-lg`}
+              />
+            </span>
+            {comuna}
           </li>
           <li>
             <Link to="/news" style={{ color: "black" }}>
