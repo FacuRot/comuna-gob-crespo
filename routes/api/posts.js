@@ -168,11 +168,19 @@ router.delete("/:id", auth, async (req, res) => {
 // @desc    Material de estudio licencica de conducir
 // @access  public
 router.get("/pdf/licencia-conducir", (req, res) => {
+  /*
   var file = fs.createReadStream(
     "./public/ansv_licencias_libro_senales_de_transito.pdf"
   );
 
   file.pipe(res);
+  */
+
+  res
+    .status(200)
+    .sendFile("/ansv_licencias_libro_senales_de_transito.pdf", {
+      root: "./public"
+    });
 });
 
 module.exports = router;
