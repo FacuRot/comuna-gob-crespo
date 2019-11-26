@@ -3,6 +3,7 @@ import LinksVial from "../links/LinksVial";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getPdfLicenciaConducir } from "../../actions/news";
+import pdfLicencia from "../../contenido descargable/ansv_licencias_libro_senales_de_transito.pdf"
 
 const LicenciaConducir = ({ getPdfLicenciaConducir }) => (
   <div>
@@ -108,12 +109,14 @@ const LicenciaConducir = ({ getPdfLicenciaConducir }) => (
           </li>
         </ul>
         <h3>Material de Estudio</h3>
-        <button
+        <a
+          href={pdfLicencia}
+          target="_blank"
+          rel="noopener noreferrer"
           className="btn btn-light"
-          onClick={() => getPdfLicenciaConducir()}
         >
           Descargar
-        </button>
+        </a>
       </div>
       <div>
         <LinksVial />
