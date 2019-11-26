@@ -506,6 +506,12 @@ table tr td {
   opacity: 1;
 }
 
+/* Licencia de Conducir */
+#licenciaConducirDiv {
+  width: 90%;
+  margin: 0 4rem 3rem 0;
+}
+
 /* Mobile Styles */
 @media (max-width: 700px) {
   /* Landing */
@@ -683,6 +689,11 @@ table tr td {
   .banner-vial {
     height: 25vh;
     background: url("./img/banner-yellow-phone.jpg") center center/cover;
+  }
+
+  /* Licencia de Conducir */
+  #licenciaConducirDiv {
+    margin: 0rem 1rem 2rem 1rem;
   }
 }
 

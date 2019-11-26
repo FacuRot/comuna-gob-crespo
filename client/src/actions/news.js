@@ -63,3 +63,26 @@ export const getMoreNews = () => async dispatch => {
     errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
   }
 };
+
+// Get pdf to download
+export const getPdfLicenciaConducir = () => async dispatch => {
+  try {
+    const res = await axios("/api/posts/pdf/licencia-conducir", {
+      method: "GET",
+      responseType: "blob"
+    });
+
+    // Create a Blob from pdf stream
+    const file = new Blob([res.data], {
+      type: "application/pdf"
+    });
+
+    // Build an url from the file
+    const fileURL = URL.createObjectURL(file);
+
+    // Open url on new window
+    window.open(fileURL);
+  } catch (error) {
+    console.log(error.msg);
+  }
+};

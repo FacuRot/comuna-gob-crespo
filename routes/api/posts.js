@@ -4,6 +4,7 @@ const { check, validationResult } = require("express-validator");
 const auth = require("../../middleware/auth");
 const upload = require("../../services/file-upload");
 const mongoose = require("mongoose");
+const fs = require("fs");
 
 const Post = require("../../models/Post");
 const User = require("../../models/User");
@@ -163,77 +164,15 @@ router.delete("/:id", auth, async (req, res) => {
   }
 });
 
-// @route   POST api/posts/comment/:id
-// @desc    Create a comment
+// @route   GET api/posts/pdf/licencia-conducir
+// @desc    Material de estudio licencica de conducir
 // @access  public
-router.post(
-  "/comment/:id",
-  [
-    check("text", "Escriba un comentario")
-      .not()
-      .isEmpty(),
-    check("name", "Escriba su nombre")
-      .not()
-      .isEmpty()
-  ],
-  async (req, res) => {
-    const errors = validationResult(req);
+router.get("/pdf/licencia-conducir", (req, res) => {
+  var file = fs.createReadStream(
+    "./public/ansv_licencias_libro_senales_de_transito.pdf"
+  );
 
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-
-    try {
-      const post = await Post.findById(req.params.id);
-
-      const newComment = {
-        text: req.body.text,
-        name: req.body.name
-      };
-
-      post.comments.unshift(newComment);
-
-      await post.save();
-
-      res.status(200).json(post.comments);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json(error);
-    }
-  }
-);
-
-// @route   DELETE api/posts/comment/:id/:comment_id
-// @desc    Delete a comment
-// @access  private
-router.delete("/comment/:id/:comment_id", auth, async (req, res) => {
-  try {
-    const post = await Post.findById(req.params.id);
-
-    // Pull out comment
-    const comment = post.comments.find(
-      comment => comment.id === req.params.comment_id
-    );
-
-    // Make sure comment exists
-    if (!comment) {
-      return res.status(404).json({ msg: "No existe el comentario" });
-    }
-
-    // Get remove index
-    const removeIndex = post.comments
-      .map(comment => comment.id.toString())
-      .indexOf(req.params.comment_id);
-
-    post.comments.splice(removeIndex, 1);
-
-    await post.save();
-
-    res.json(post.comments);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json(error);
-  }
+  file.pipe(res);
 });
 
 module.exports = router;
