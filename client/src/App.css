@@ -512,6 +512,11 @@ table tr td {
   margin: 0 4rem 3rem 0;
 }
 
+/* Derecho de Registro e Inspeccion */
+#derechoRegistroInspeccion {
+  font-size: 40px;
+}
+
 /* Mobile Styles */
 @media (max-width: 700px) {
   /* Landing */
@@ -694,6 +699,11 @@ table tr td {
   /* Licencia de Conducir */
   #licenciaConducirDiv {
     margin: 0rem 1rem 2rem 1rem;
+  }
+
+  /* Derecho de Registro e Inspeccion */
+  #derechoRegistroInspeccion {
+    font-size: 35px;
   }
 }
 

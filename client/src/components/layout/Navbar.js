@@ -93,7 +93,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           setShouldDisplayList(!shouldDisplayList);
         }}
       >
-        Solicitud de Alta
+        Solicitud Libre Deuda
       </Link>
       <Link
         to="/tasa-rural"
@@ -103,7 +103,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           setShouldDisplayList(!shouldDisplayList);
         }}
       >
-        Tasa Rural
+        DREI
       </Link>
       <a
         href="http://gcrespo.boletaweb.com.ar"

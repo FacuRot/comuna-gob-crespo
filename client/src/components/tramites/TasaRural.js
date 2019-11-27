@@ -16,29 +16,50 @@ const TasaRural = () => (
           color: "white"
         }}
       >
-        <h1
-          style={{
-            fontSize: "40px"
-          }}
-        >
-          Derecho de Registro e Inspección
-        </h1>
+        <h1 id="derechoRegistroInspeccion">Derecho de Registro e Inspección</h1>
       </section>
     </div>
     <div className="news-container">
       <div id="licenciaConducirDiv">
-        <h3>Solicitud de Inscripción Registro e Inspección</h3>
+        <h3>Solicitud de Alta</h3>
         <p>Descargar formulario:</p>
         <a
           href={pdfRegistroInspeccion}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-light"
+          style={{ marginBottom: "0.5rem" }}
         >
           Descargar
         </a>
+        <p>
+          <strong>Documentación a presentar:</strong>
+        </p>
+        <ul style={{ marginBottom: "2rem" }}>
+          <li>Fotocopia de DNI</li>
+          <li>Constancia de Inscripción en AFIP y API</li>
+          <li>Formulario por duplicado</li>
+        </ul>
 
-        <p style={{ marginLeft: "5px", marginTop: "1rem" }}>
+        <h3>Solicitud de Baja</h3>
+        <p>
+          <strong>Documentación a presentar:</strong>
+        </p>
+        <ul style={{ marginBottom: "2rem" }}>
+          <li>Nota solicitando la baja</li>
+          <li>Constancia de baja en AFIP y API</li>
+        </ul>
+
+        <h3>Cambio de Datos</h3>
+        <p>
+          <strong>Documentación a presentar:</strong>
+        </p>
+        <ul style={{ marginBottom: "2rem" }}>
+          <li>Nota solicitando el cambio de datos</li>
+          <li>Comprobante de AFIP o API</li>
+        </ul>
+
+        <p>
           <strong>Queres saber más? Contactate con nosotros.</strong>
         </p>
         <Link to="/contacto" className="btn btn-light">
