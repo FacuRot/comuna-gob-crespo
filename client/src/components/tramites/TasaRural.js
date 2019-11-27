@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LinksVial from "../links/LinksVial";
+import pdfRegistroInspeccion from "../../contenido descargable/SOLICITUD DE INSCRIPCION REG E INSPSC..pdf";
 
 const TasaRural = () => (
   <div>
@@ -20,26 +21,22 @@ const TasaRural = () => (
             fontSize: "40px"
           }}
         >
-          Tasa Rural
+          Derecho de Registro e Inspección
         </h1>
       </section>
     </div>
     <div className="news-container">
-      <div style={{ width: "90%", margin: "15px", marginBottom: "3rem" }}>
-        <h3 style={{ marginLeft: "5px" }}>Zona Rural</h3>
-        <p style={{ marginLeft: "5px" }}>
-          2 cuotas: 1° vencimiento en el mes de junio, 2° vencimiento en el mes
-          de noviembre
-        </p>
-
-        <h3 style={{ marginLeft: "5px", marginTop: "1rem" }}>
-          Categoría Unica
-        </h3>
-        <p style={{ marginLeft: "5px" }}>
-          El importe en pesos correspondiente a 1(un) litro de gas oil por
-          hectárea y por año, actualizado al precio de la fecha a efectivizarse
-          el pago de la tasa
-        </p>
+      <div id="licenciaConducirDiv">
+        <h3>Solicitud de Inscripción Registro e Inspección</h3>
+        <p>Descargar formulario:</p>
+        <a
+          href={pdfRegistroInspeccion}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-light"
+        >
+          Descargar
+        </a>
 
         <p style={{ marginLeft: "5px", marginTop: "1rem" }}>
           <strong>Queres saber más? Contactate con nosotros.</strong>

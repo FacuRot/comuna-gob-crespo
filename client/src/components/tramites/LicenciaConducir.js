@@ -1,11 +1,8 @@
 import React from "react";
 import LinksVial from "../links/LinksVial";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { getPdfLicenciaConducir } from "../../actions/news";
-import pdfLicencia from "../../contenido descargable/ansv_licencias_libro_senales_de_transito.pdf"
+import pdfLicencia from "../../contenido descargable/ansv_licencias_libro_senales_de_transito.pdf";
 
-const LicenciaConducir = ({ getPdfLicenciaConducir }) => (
+const LicenciaConducir = () => (
   <div>
     <div className="banner banner-blue">
       <section
@@ -30,7 +27,7 @@ const LicenciaConducir = ({ getPdfLicenciaConducir }) => (
     <div className="news-container">
       <div id="licenciaConducirDiv">
         <h3>Requisitos</h3>
-        <p style={{ marginBottom: "2rem" }}>
+        <p>
           Por nuevas disposiciones provinciales vigentes desde 2015, en adhesión
           a registros nacionales,{" "}
           <strong>
@@ -53,44 +50,44 @@ const LicenciaConducir = ({ getPdfLicenciaConducir }) => (
             obligatoria a la capacitación presencial
           </strong>
           . Una vez ingresado en el sitio curso.seguridadvial.gob.ar/ansv :
-          <ul>
-            <li>
-              - seleccionar REGISTRATE, luego “Auto” o “Moto” para completar sus
-              datos personales, junto a un correo electrónico;
-            </li>
-            <li>
-              - tildar en “Acepto los términos y condiciones” y finalizar
-              registro;
-            </li>
-            <li>
-              - acceder desde su casilla de correo electrónico al enlace de
-              confirmación de cuenta que el sitio le notificará automáticamente;
-            </li>
-            <li>
-              - ingresar a dicha dirección y quedará confirmada su cuenta, donde
-              podrá seleccionar “Comenzar Curso”, o Cerrar Sesión y volver desde
-              ENTRAR, según disposición;
-            </li>
-            <li>
-              -{" "}
-              <strong>
-                finalizados los módulos didácticos que componen cada opción,
-                imprimir los Comprobantes/Certificados, que deberán presentarse
-                para solicitar turnos en el Juzgado de Faltas, de lunes a
-                viernes de 7 a 13 hs., junto con su D.N.I. y Licencias de
-                Conducir actuales (si posee), sin excepción. Se le otorgará día
-                y horario (plazo máximo de 2 semanas) para presentarse en la
-                Comuna local con la documentación pertinente
-              </strong>{" "}
-              que se le informará al momento de fijarse el mismo, para luego
-              allí finalizar con los trámites administrativos, exámenes
-              psicofísicos/psicológicos y teóricos/prácticos, según
-              correspondiera a las clases requeridas y edad del solicitante.
-              exámenes psicofísicos/psicológicos y teóricos/prácticos, según
-              correspondiera a las clases requeridas y edad del solicitante.
-            </li>
-          </ul>
         </p>
+        <ul style={{ marginBottom: "2rem" }}>
+          <li>
+            - seleccionar REGISTRATE, luego “Auto” o “Moto” para completar sus
+            datos personales, junto a un correo electrónico;
+          </li>
+          <li>
+            - tildar en “Acepto los términos y condiciones” y finalizar
+            registro;
+          </li>
+          <li>
+            - acceder desde su casilla de correo electrónico al enlace de
+            confirmación de cuenta que el sitio le notificará automáticamente;
+          </li>
+          <li>
+            - ingresar a dicha dirección y quedará confirmada su cuenta, donde
+            podrá seleccionar “Comenzar Curso”, o Cerrar Sesión y volver desde
+            ENTRAR, según disposición;
+          </li>
+          <li>
+            -{" "}
+            <strong>
+              finalizados los módulos didácticos que componen cada opción,
+              imprimir los Comprobantes/Certificados, que deberán presentarse
+              para solicitar turnos en el Juzgado de Faltas, de lunes a viernes
+              de 7 a 13 hs., junto con su D.N.I. y Licencias de Conducir
+              actuales (si posee), sin excepción. Se le otorgará día y horario
+              (plazo máximo de 2 semanas) para presentarse en la Comuna local
+              con la documentación pertinente
+            </strong>{" "}
+            que se le informará al momento de fijarse el mismo, para luego allí
+            finalizar con los trámites administrativos, exámenes
+            psicofísicos/psicológicos y teóricos/prácticos, según correspondiera
+            a las clases requeridas y edad del solicitante. exámenes
+            psicofísicos/psicológicos y teóricos/prácticos, según correspondiera
+            a las clases requeridas y edad del solicitante.
+          </li>
+        </ul>
         <h3>Práctica de Exámen</h3>
         <ul style={{ marginBottom: "2rem" }}>
           <li>
@@ -125,8 +122,4 @@ const LicenciaConducir = ({ getPdfLicenciaConducir }) => (
   </div>
 );
 
-LicenciaConducir.propTypes = {
-  getPdfLicenciaConducir: PropTypes.func.isRequired
-};
-
-export default connect(null, { getPdfLicenciaConducir })(LicenciaConducir);
+export default LicenciaConducir;

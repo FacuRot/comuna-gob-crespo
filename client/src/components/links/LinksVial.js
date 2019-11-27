@@ -17,14 +17,14 @@ const LinksVial = () => {
         className="btn-info"
         style={{ backgroundColor: "#f5ad3e", marginBottom: "5px" }}
       >
-        Datos Requeridos Para La Solicitud de Alta
+        Solicitud de Libre Deuda
       </Link>
       <Link
         to="/tasa-rural"
         className="btn-info"
         style={{ backgroundColor: "#fac640", marginBottom: "5px" }}
       >
-        Tasa Rural
+        DREI
       </Link>
       <a
         href="http://gcrespo.boletaweb.com.ar/login"
@@ -34,6 +34,9 @@ const LinksVial = () => {
       >
         Liquidaciones
       </a>
+      <Link to="/aranceles" className="btn-info">
+        Aranceles
+      </Link>
     </div>
   );
 };
