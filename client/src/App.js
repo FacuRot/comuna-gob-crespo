@@ -20,6 +20,7 @@ import Vial from "./components/seguridad-vial/Vial";
 import LicenciaConducir from "./components/tramites/LicenciaConducir";
 import SolicitudAlta from "./components/tramites/SolicitudAlta";
 import TasaRural from "./components/tramites/TasaRural";
+import Aranceles from "./components/tramites/Aranceles";
 // Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -77,6 +78,7 @@ const App = () => {
               />
               <Route exact path="/solicitud-alta" component={SolicitudAlta} />
               <Route exact path="/tasa-rural" component={TasaRural} />
+              <Route exact path="/aranceles" component={Aranceles} />
             </Switch>
           </section>
           <Footer />

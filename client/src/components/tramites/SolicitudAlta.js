@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LinksVial from "../links/LinksVial";
+import pdfLibreDeuda from "../../contenido descargable/Talonario solicitud libre deuda.pdf";
 
 const SolicitudAlta = () => (
   <div>
@@ -20,45 +21,26 @@ const SolicitudAlta = () => (
             fontSize: "40px"
           }}
         >
-          Derecho de Registro e Inspección
+          Solicitud de Libre Deuda
         </h1>
       </section>
     </div>
     <div className="news-container">
-      <div style={{ width: "90%", margin: "15px", marginBottom: "3rem" }}>
-        <h3 style={{ marginLeft: "5px" }}>Formularios</h3>
-        <ol style={{ marginLeft: "5px" }}>
-          <li style={{ marginLeft: "15px" }}>Solicitud de alta</li>
-          <li style={{ marginLeft: "15px" }}>
-            Certificado de cese de actividad
-          </li>
-          <li style={{ marginLeft: "15px" }}>Certificado de baja</li>
-        </ol>
+      <div id="licenciaConducirDiv">
+        <h3>Solicitud de Libre Deuda</h3>
+        <p>Talonario de solicitud de libre deuda:</p>
+        <a
+          href={pdfLibreDeuda}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-light"
+          style={{ marginBottom: "2rem" }}
+        >
+          Descargar
+        </a>
 
-        <h3 style={{ marginLeft: "5px", marginTop: "1rem" }}>
-          Datos Requeridos para la Solicitud de Alta
-        </h3>
-        <p style={{ marginLeft: "5px" }}>
-          Titular, Nombre de Fatnasia, Forma Jurídica, CUIT, Fecha inicio de
-          actividades, Domicilio real y comercial, Actividad principal y
-          secundaria, N° de DNI del titular
-        </p>
-
-        <h3 style={{ marginLeft: "5px", marginTop: "1rem" }}>
-          Requisitos para cada Actividad
-        </h3>
-        <ul style={{ marginLeft: "5px" }}>
-          <li>Comercios en General(kiosko, almacenes, tiendas, etc.)</li>
-          <li>DNI del Titular</li>
-          <li>Inscripción en API o AFIP</li>
-          <li>Contrato de Locación</li>
-        </ul>
-        <p style={{ marginLeft: "5px" }}>
-          Todo en fotocopias debidamente certificadas ante la autoridad policial
-        </p>
-
-        <p style={{ marginLeft: "5px", marginTop: "1rem" }}>
-          <strong>Queres saber más? Contactate con nosotros.</strong>
+        <p>
+          <strong>Queres saber más? Contactate con nosotros</strong>
         </p>
         <Link to="/contacto" className="btn btn-light">
           Contacto

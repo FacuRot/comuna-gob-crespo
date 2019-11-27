@@ -120,6 +120,16 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       >
         Liquidaciones
       </a>
+      <Link
+        to="/aranceles"
+        style={{ color: "black" }}
+        onClick={() => {
+          setShouldDisplayTramites(!shouldDisplayTramites);
+          setShouldDisplayList(!shouldDisplayList);
+        }}
+      >
+        Aranceles
+      </Link>
     </section>
   );
 
@@ -345,7 +355,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(
-  mapStateToProps,
-  { logout }
-)(Navbar);
+export default connect(mapStateToProps, { logout })(Navbar);
