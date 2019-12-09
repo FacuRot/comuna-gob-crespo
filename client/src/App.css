@@ -351,6 +351,11 @@ button {
   background: url("./img/SEG-01.jpg") center center/cover;
 }
 
+.banner-convocatorias {
+  height: 44vh;
+  background: url("./img/banner-violeta.png") center center/cover;
+}
+
 /* Iconsbar */
 .iconsbar {
   background-color: white;
@@ -694,6 +699,12 @@ table tr td {
   .banner-vial {
     height: 25vh;
     background: url("./img/banner-yellow-phone.jpg") center center/cover;
+  }
+
+  /* Banner Convocatorias */
+  .banner-convocatorias {
+    height: 25vh;
+    background: url("./img/banner-violeta-movil.png") center center/cover;
   }
 
   /* Licencia de Conducir */

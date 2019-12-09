@@ -25,7 +25,7 @@ const Iconsbar = () => {
           </p>
         </section>
       </Link>
-      <Link to="seguridad-vial" style={{ color: "#333" }}>
+      <Link to="/seguridad-vial" style={{ color: "#333" }}>
         <section>
           <img src={SeguridadVial} alt="Seguridad Vial" className="icon" />
           <p>
@@ -33,12 +33,14 @@ const Iconsbar = () => {
           </p>
         </section>
       </Link>
-      <section>
-        <img src={Convocatorias} alt="Convocatorias" className="icon" />
-        <p>
-          <strong>CONVOCATORIAS</strong>
-        </p>
-      </section>
+      <Link to="/convocatorias" style={{ color: "#333" }}>
+        <section>
+          <img src={Convocatorias} alt="Convocatorias" className="icon" />
+          <p>
+            <strong>CONVOCATORIAS</strong>
+          </p>
+        </section>
+      </Link>
     </nav>
   );
 };
