@@ -21,6 +21,9 @@ import LicenciaConducir from "./components/tramites/LicenciaConducir";
 import SolicitudAlta from "./components/tramites/SolicitudAlta";
 import TasaRural from "./components/tramites/TasaRural";
 import Aranceles from "./components/tramites/Aranceles";
+import Convocatorias from "./components/convocatoria/Convocatorias";
+import Residencia from "./components/convocatoria/Residencia";
+import Beca from "./components/convocatoria/Beca";
 // Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -79,6 +82,13 @@ const App = () => {
               <Route exact path="/solicitud-alta" component={SolicitudAlta} />
               <Route exact path="/tasa-rural" component={TasaRural} />
               <Route exact path="/aranceles" component={Aranceles} />
+              <Route exact path="/convocatorias" component={Convocatorias} />
+              <Route
+                exact
+                path="/convocatorias/residencia"
+                component={Residencia}
+              />
+              <Route exact path="/convocatorias/beca" component={Beca} />
             </Switch>
           </section>
           <Footer />

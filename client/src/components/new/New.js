@@ -78,7 +78,6 @@ const New = ({
             >
               Fuente: {newItem.font}
             </p>
-            <MoreNews />
             {isAuthenticated && (
               <Link
                 to={`/create-news/${newItem._id}`}
@@ -87,6 +86,7 @@ const New = ({
                 Editar Noticia
               </Link>
             )}
+            <MoreNews />
           </div>
           <Links />
         </div>

@@ -50,8 +50,8 @@ const TallerItem = ({
                 style={{ height: "auto" }}
               />
 
-              <p style={{ marginLeft: "5px" }}>{tallerItem.description}</p>
-              <p style={{ marginLeft: "5px", marginTop: "1rem" }}>
+              <p>{tallerItem.description}</p>
+              <p style={{ marginTop: "1rem" }}>
                 <strong>Queres saber más? Contactate con nosotros.</strong>
               </p>
               <Link to="/contacto" className="btn btn-light">
@@ -76,7 +76,4 @@ TallerItem.propTypes = {
   getTallerById: PropTypes.func.isRequired
 };
 
-export default connect(
-  mapStateToProps,
-  { getTallerById }
-)(TallerItem);
+export default connect(mapStateToProps, { getTallerById })(TallerItem);
