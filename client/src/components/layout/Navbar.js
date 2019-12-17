@@ -165,6 +165,16 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       >
         Seguridad Vial
       </Link>
+      <Link
+        to="/calendar"
+        style={{ color: "black" }}
+        onClick={() => {
+          setShouldDisplayComuna(!shouldDisplayComuna);
+          setShouldDisplayList(!shouldDisplayList);
+        }}
+      >
+        Calendario
+      </Link>
     </section>
   );
 
