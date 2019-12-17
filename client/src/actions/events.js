@@ -24,6 +24,7 @@ export const getEvents = () => async dispatch => {
       payload: res.data
     });
   } catch (errors) {
-    errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
+    //errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
+    throw errors;
   }
 };

@@ -5,6 +5,7 @@ import { getEvents } from "../../actions/events";
 import Agenda from "../create-events/agenda.png";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import { Link } from "react-router-dom";
 
 const DisplayEvents = ({ getEvents, events: { loading, eventsArray } }) => {
   useEffect(() => {
@@ -81,7 +82,8 @@ const DisplayEvents = ({ getEvents, events: { loading, eventsArray } }) => {
       : eventsArray.map(item => {
           const current = new Date(item.date);
           return (
-            <div
+            <Link
+              to="/calendar"
               style={{
                 paddingBottom: "50px",
                 display: "flex",
@@ -120,7 +122,7 @@ const DisplayEvents = ({ getEvents, events: { loading, eventsArray } }) => {
                 </p>
                 <p>{item.text}</p>
               </div>
-            </div>
+            </Link>
           );
         });
 
@@ -210,7 +212,4 @@ const mapStateToProps = state => ({
   events: state.events
 });
 
-export default connect(
-  mapStateToProps,
-  { getEvents }
-)(DisplayEvents);
+export default connect(mapStateToProps, { getEvents })(DisplayEvents);
