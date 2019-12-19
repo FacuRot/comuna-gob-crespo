@@ -152,9 +152,9 @@ const DisplayEvents = ({ getEvents, events: { loading, eventsArray } }) => {
             alt="Agenda"
             style={{ height: "30px", width: "auto" }}
           />
-          <h3 style={{ color: "grey", marginLeft: "5px" }}>
+          <Link to="/calendar" style={{ color: "grey", marginLeft: "5px" }}>
             AGENDA DE EVENTOS Y ACTOS
-          </h3>
+          </Link>
         </section>
         <div
           style={{

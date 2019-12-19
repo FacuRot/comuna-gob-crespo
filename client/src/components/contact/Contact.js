@@ -53,20 +53,30 @@ const Contact = ({ sendEmail, history }) => {
 
   return (
     <div style={{ backgroundColor: "white" }}>
-      <div className="banner">
+      <div className="banner" style={{ height: "25vh" }}>
         <section
           style={{
+            maxWidth: "75%",
+            margin: "auto",
+            width: "100%",
             display: "flex",
             alignItems: "center",
-            justifyContent: "flex-start",
-            paddingLeft: "1.5rem",
-            color: "white"
+            justifyContent: "flex-start"
           }}
         >
-          <i className="fas fa-phone-alt fa-2x" style={{ margin: "10px" }} />
+          <i
+            className="fas fa-phone-alt fa-2x"
+            style={{
+              width: "3rem",
+              height: "auto",
+              marginRight: "1rem",
+              color: "white"
+            }}
+          />
           <h1
             style={{
-              fontSize: "40px"
+              fontSize: "2rem",
+              color: "white"
             }}
           >
             Contacto
@@ -144,7 +154,4 @@ Contact.propTypes = {
   sendEmail: PropTypes.func.isRequired
 };
 
-export default connect(
-  null,
-  { sendEmail }
-)(Contact);
+export default connect(null, { sendEmail })(Contact);
