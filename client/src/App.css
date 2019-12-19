@@ -258,7 +258,7 @@ button {
 }
 
 .navbar a {
-  color: #eeeded;
+  color: gray;
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
@@ -306,7 +306,7 @@ button {
 
 /* Landing Page */
 .landing {
-  height: 90vh;
+  height: 100vh;
 }
 
 .landing-movil {

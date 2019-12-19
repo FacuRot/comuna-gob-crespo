@@ -19,24 +19,27 @@ const New = ({
 
   return (
     <div style={{ backgroundColor: "white" }}>
-      <div className="banner">
+      <div className="banner" style={{ height: "25vh" }}>
         <section
           style={{
+            maxWidth: "75%",
+            margin: "auto",
+            width: "100%",
             display: "flex",
             alignItems: "center",
-            justifyContent: "flex-start",
-            paddingLeft: "1.5rem",
-            color: "white"
+            justifyContent: "flex-start"
           }}
         >
           <img
             src={NoticiasIcono}
             alt="Noticias"
-            style={{ width: "50px", height: "50px", marginRight: "10px" }}
+            className="hide-sm"
+            style={{ width: "3rem", height: "auto", marginRight: "1rem" }}
           />
           <h1
             style={{
-              fontSize: "40px"
+              fontSize: "2rem",
+              color: "white"
             }}
           >
             NOTICIAS
@@ -106,7 +109,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(
-  mapStateToProps,
-  { getNewById }
-)(New);
+export default connect(mapStateToProps, { getNewById })(New);
