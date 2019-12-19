@@ -15,7 +15,7 @@ import isSameDay from "date-fns/isSameDay";
 import toDate from "date-fns/toDate";
 import { es } from "date-fns/locale";
 import "./Calendar.css";
-import Agenda from "../create-events/agenda.png";
+import Agenda from "./agendablanco.png";
 
 const CalendarComponent = ({ getEvents, events: { loading, eventsArray } }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -24,7 +24,6 @@ const CalendarComponent = ({ getEvents, events: { loading, eventsArray } }) => {
 
   useEffect(() => {
     getEvents();
-
   }, []);
 
   useEffect(() => {

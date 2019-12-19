@@ -34,7 +34,11 @@ const LinksVial = () => {
       >
         Liquidaciones
       </a>
-      <Link to="/aranceles" className="btn-info">
+      <Link
+        to="/aranceles"
+        className="btn-info"
+        style={{ backgroundColor: "#ffe49d", marginBottom: "5px" }}
+      >
         Aranceles
       </Link>
     </div>
