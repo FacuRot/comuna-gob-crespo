@@ -36,8 +36,6 @@ router.post(
     }
 
     try {
-      const user = await User.findById(req.user.id).select("-password");
-
       var filename = "";
       var path = "";
 
@@ -50,8 +48,6 @@ router.post(
         title: req.body.title,
         text: req.body.text,
         font: req.body.font,
-        name: user.name,
-        avatar: user.avatar,
         user: req.user.id,
         image: {
           filename: filename,
@@ -60,25 +56,25 @@ router.post(
       };
 
       let id = req.params.id;
-      if (req.params.id === 0) {
-        id = mongoose.Types.ObjectId(req.params.id);
-      }
+      if (req.params.id !== "0") {
+        // Update post
+        let post = await Post.findById(id);
 
-      // Update post
-      let post = await Post.findById(id);
+        if (post) {
+          post = await Post.findOneAndUpdate(
+            { _id: id },
+            { $set: newPost },
+            { new: true }
+          );
 
-      if (post) {
-        post = await Post.findOneAndUpdate(
-          { _id: id },
-          { $set: newPost },
-          { new: true }
-        );
+          return res.status(200).json(post);
+        }
 
-        return res.status(200).json(post);
+        console.log("entre");
       }
 
       // Create
-      post = new Post(newPost);
+      var post = new Post(newPost);
 
       await post.save();
 
