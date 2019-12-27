@@ -28,3 +28,17 @@ export const getEvents = () => async dispatch => {
     throw errors;
   }
 };
+
+export const eraseEvent = id => async dispatch => {
+  try {
+    if (
+      window.confirm(
+        "Quieres continuar? una vez borrado este evento no se puede recuperar"
+      )
+    ) {
+      await axios.post(`api/events/${id}`);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};

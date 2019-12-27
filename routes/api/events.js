@@ -52,6 +52,20 @@ router.post(
   }
 );
 
+// @route   POST api/events/:id
+// @desc    Erase event
+// @access  private
+router.post("/:id", [auth], async (req, res) => {
+  try {
+    const data = await Event.findByIdAndDelete(req.params.id);
+
+    res.status(200).json(data);
+  } catch (error) {
+    console.error("Server error");
+    res.status(500).json(error);
+  }
+});
+
 // @route   GET api/events
 // @desc    Get Events
 // @access  public

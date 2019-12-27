@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getEvents } from "../../actions/events";
+import { getEvents, eraseEvent } from "../../actions/events";
 import { format } from "date-fns";
 import startOfMonth from "date-fns/startOfMonth";
 import endOfMonth from "date-fns/endOfMonth";
@@ -17,7 +17,12 @@ import { es } from "date-fns/locale";
 import "./Calendar.css";
 import Agenda from "./agendablanco.png";
 
-const CalendarComponent = ({ getEvents, events: { loading, eventsArray } }) => {
+const CalendarComponent = ({
+  getEvents,
+  eraseEvent,
+  events: { loading, eventsArray },
+  auth: { isAuthenticated }
+}) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [fechasTabla, setFechasTabla] = useState([]);
   const [arregloEventos] = useState([]);
@@ -33,6 +38,11 @@ const CalendarComponent = ({ getEvents, events: { loading, eventsArray } }) => {
 
     return setEmptyArray();
   });
+
+  const deleteEvent = id => {
+    eraseEvent(id);
+    getEvents();
+  };
 
   if (!loading || eventsArray !== null) {
     eventsArray.map(event => {
@@ -253,6 +263,11 @@ const CalendarComponent = ({ getEvents, events: { loading, eventsArray } }) => {
                 {new Date(evento.date).getUTCDate()}.
               </p>
               <h4> {evento.title}</h4>
+              {isAuthenticated && (
+                <button onClick={() => deleteEvent(evento._id)}>
+                  Eliminar
+                </button>
+              )}
             </section>
           ))}
         </div>
@@ -262,12 +277,17 @@ const CalendarComponent = ({ getEvents, events: { loading, eventsArray } }) => {
 };
 
 const mapStateToProps = state => ({
-  events: state.events
+  events: state.events,
+  auth: state.auth
 });
 
 CalendarComponent.propTypes = {
+  auth: PropTypes.object.isRequired,
   events: PropTypes.object.isRequired,
-  getEvents: PropTypes.func.isRequired
+  getEvents: PropTypes.func.isRequired,
+  eraseEvent: PropTypes.func.isRequired
 };
 
-export default connect(mapStateToProps, { getEvents })(CalendarComponent);
+export default connect(mapStateToProps, { getEvents, eraseEvent })(
+  CalendarComponent
+);
