@@ -40,23 +40,23 @@ const Comuna = () => {
           <table>
             <tr>
               <td style={{ color: "grey" }}>PRESIDENTE</td>
-              <td>LEMAIRE Luciano Gabriel</td>
+              <td>Lemaire, Luciano Gabriel</td>
             </tr>
             <tr>
               <td style={{ color: "grey" }}>VICEPRESIDENTE</td>
-              <td>BARONI Pablo Luis María</td>
+              <td>Spinetta, Danisa Carolina</td>
             </tr>
             <tr>
-              <td style={{ color: "grey" }}>TESORERA</td>
-              <td>MORELLI Gisela Susana</td>
+              <td style={{ color: "grey" }}>TESORERo</td>
+              <td>Fava, Cristian Javier</td>
             </tr>
             <tr>
               <td style={{ color: "grey" }}>SECRETARIO</td>
-              <td>FAVA Cristian Javier</td>
+              <td>Baroni, Pablo Luis Maria</td>
             </tr>
             <tr>
-              <td style={{ color: "grey" }}>1° VOCAL</td>
-              <td>GAUCHAT Laura Andrea</td>
+              <td style={{ color: "grey" }}>VOCAL</td>
+              <td>Perez Guevara, Ivan Martín</td>
             </tr>
             <tr>
               <td style={{ color: "grey" }}>ASITENCIA SOCIAL</td>
