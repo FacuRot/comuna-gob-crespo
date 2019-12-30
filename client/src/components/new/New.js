@@ -1,21 +1,27 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { getNewById, getMoreNews } from "../../actions/news";
+import { Link, Redirect } from "react-router-dom";
+import { getNewById, getMoreNews, deleteNew } from "../../actions/news";
 import NoticiasIcono from "../newsInLanding/noticiasIcono.png";
 import Links from "../links/Links";
 import MoreNews from "./MoreNews";
 
 const New = ({
   getNewById,
+  deleteNew,
   news: { newItem, loading },
   match,
-  auth: { isAuthenticated }
+  auth: { isAuthenticated },
+  history
 }) => {
   useEffect(() => {
     getNewById(match.params.id);
   }, [getNewById, match]);
+
+  const deleteAndRedirect = id => {
+    deleteNew(id, history);
+  };
 
   return (
     <div style={{ backgroundColor: "white" }}>
@@ -82,12 +88,21 @@ const New = ({
               Fuente: {newItem.font}
             </p>
             {isAuthenticated && (
-              <Link
-                to={`/create-news/${newItem._id}`}
-                className="btn btn-light"
-              >
-                Editar Noticia
-              </Link>
+              <section>
+                <Link
+                  to={`/create-news/${newItem._id}`}
+                  className="btn btn-light"
+                >
+                  Editar Noticia
+                </Link>
+
+                <button
+                  className="btn btn-light"
+                  onClick={() => deleteAndRedirect(newItem._id)}
+                >
+                  Eliminar Noticia
+                </button>
+              </section>
             )}
             <MoreNews />
           </div>
@@ -101,6 +116,7 @@ const New = ({
 New.propTypes = {
   news: PropTypes.object.isRequired,
   getNewById: PropTypes.func.isRequired,
+  deleteNew: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
 
@@ -109,4 +125,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { getNewById })(New);
+export default connect(mapStateToProps, { getNewById, deleteNew })(New);
