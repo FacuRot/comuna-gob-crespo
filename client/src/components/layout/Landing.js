@@ -6,7 +6,7 @@ import DisplayNews from "../newsInLanding/DisplayNews";
 import DisplayEvents from "../eventsInLanding/DisplayEvents";
 
 import crespo1 from "../../img/crespo1.jpg";
-import crespo2 from "../../img/crespo2.jpg";
+import crespo2 from "../../img/crespo2.jpeg";
 import crespo3 from "../../img/crespo3.jpg";
 import crespoMovil from "../../img/crespoMoviles.jpg";
 
