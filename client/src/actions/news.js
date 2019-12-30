@@ -63,3 +63,20 @@ export const getMoreNews = () => async dispatch => {
     errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
   }
 };
+
+// Delete new by id
+export const deleteNew = (id, history) => async dispatch => {
+  try {
+    if (
+      window.confirm(
+        "Quieres continuar? una vez borrado esta noticia no se puede recuperar"
+      )
+    ) {
+      await axios.delete(`/api/posts/${id}`);
+      history.push("/news");
+    }
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};

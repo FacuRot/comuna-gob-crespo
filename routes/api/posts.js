@@ -57,6 +57,10 @@ router.post(
 
       let id = req.params.id;
       if (req.params.id !== "0") {
+        // Add new date to the post
+        const current = new Date();
+        newPost.date = current;
+
         // Update post
         let post = await Post.findById(id);
 
@@ -140,15 +144,17 @@ router.delete("/:id", auth, async (req, res) => {
     }
 
     // Check user
+    /*
     if (post.user.toString() !== req.user.id) {
       return res
         .status(401)
         .json({ msg: "No estas autorizado para realizar esta accion." });
     }
+    */
 
     await post.remove();
 
-    res.json({ msg: "Post remove" });
+    res.json({ msg: "Post removed" });
   } catch (error) {
     console.error(error);
 
