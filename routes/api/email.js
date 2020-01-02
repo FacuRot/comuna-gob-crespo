@@ -53,7 +53,7 @@ router.post(
         console.log(email);
         sgMail.setApiKey(config.get("sendgridApiKey"));
         const msg = {
-          to: "facu_rot@yahoo.com",
+          to: "comunagcrespo@yahoo.com.ar",
           from: `${email}`,
           subject:
             "Email enviado desde la plataforma de la Comuna de Gdor. Crespo",
