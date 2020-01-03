@@ -47,7 +47,7 @@ const Comuna = () => {
               <td>Spinetta, Danisa Carolina</td>
             </tr>
             <tr>
-              <td style={{ color: "grey" }}>TESORERo</td>
+              <td style={{ color: "grey" }}>TESORERO</td>
               <td>Fava, Cristian Javier</td>
             </tr>
             <tr>
