@@ -80,11 +80,11 @@ const Comuna = () => {
             </tr>
             <tr>
               <td style={{ color: "grey" }}>PRENSA Y COMUNICACIÓN</td>
-              <td>Sr. VALIENTE Alejandro</td>
+              <td>Sr. Valiente Alejandro</td>
             </tr>
             <tr>
               <td style={{ color: "grey" }}>CULTURA</td>
-              <td>Sra. SPINETTA Danisa</td>
+              <td>Sra. Milesi Nerina</td>
             </tr>
           </table>
         </div>
