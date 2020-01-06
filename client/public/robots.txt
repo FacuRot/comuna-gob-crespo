@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /login
+Disallow: /dashboard
+Disallow: /add-taller
+Disallow: /create-news/
+Disallow: /create-events
+Disallow: /change-password
+
+Noindex: /login
+Noindex: /dashboard
+Noindex: /add-taller
+Noindex: /create-news/
+Noindex: /create-events
+Noindex: /change-password
