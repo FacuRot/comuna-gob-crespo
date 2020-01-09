@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Links = () => {
   return (
@@ -28,14 +29,13 @@ const Links = () => {
       >
         LIQUIDACIONES
       </a>
-      <a
-        href="http://gcrespo.boletaweb.com.ar/login/"
-        target="blank"
+      <Link
+        to="/seguridad-vial"
         className="btn-info"
         style={{ backgroundColor: "#024B99", marginBottom: "5px" }}
       >
         VIALIDAD
-      </a>
+      </Link>
     </div>
   );
 };
