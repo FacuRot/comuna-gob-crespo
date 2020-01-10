@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Placeholder from "./placeholder.png";
-import { createNews } from "../../actions/news";
+import { createNews, getNewById } from "../../actions/news";
 import { Link } from "react-router-dom";
 import Noticias from "./noticiasIcono.png";
 import Alert from "../layout/Alert";
@@ -20,6 +20,21 @@ class CreateNews extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onImageChange = this.onImageChange.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.props.match.params.id !== "0") {
+      this.props.getNewById(this.props.match.params.id);
+    }
+
+    const newItem = this.props.news.newItem;
+    if (newItem !== null) {
+      this.setState({
+        title: newItem.title,
+        text: newItem.text,
+        font: newItem.font
+      });
+    }
   }
 
   onChange(e) {
@@ -46,7 +61,11 @@ class CreateNews extends Component {
       postImage: this.img.files[0]
     };
 
-    this.props.createNews(this.props.match.params.id ,newsData, this.props.history);
+    this.props.createNews(
+      this.props.match.params.id,
+      newsData,
+      this.props.history
+    );
   }
 
   render() {
@@ -162,14 +181,14 @@ class CreateNews extends Component {
 
 CreateNews.propTypes = {
   auth: PropTypes.object.isRequired,
-  createNews: PropTypes.func.isRequired
+  news: PropTypes.object.isRequired,
+  createNews: PropTypes.func.isRequired,
+  getNewById: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  news: state.news
 });
 
-export default connect(
-  mapStateToProps,
-  { createNews }
-)(CreateNews);
+export default connect(mapStateToProps, { createNews, getNewById })(CreateNews);
