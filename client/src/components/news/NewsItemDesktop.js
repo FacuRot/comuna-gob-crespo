@@ -21,7 +21,7 @@ const NewsItemDesktop = props => {
               <section style={{ width: "300px" }}>
                 <p className="small" style={{ color: "grey" }}>
                   {new Date(item.date).getUTCDate()}/
-                  {new Date(item.date).getUTCMonth()}/
+                  {new Date(item.date).getUTCMonth()+1}/
                   {new Date(item.date).getFullYear()}
                 </p>
                 <h3>{item.title}</h3>
