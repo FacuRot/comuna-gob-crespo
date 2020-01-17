@@ -4,6 +4,7 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import DisplayNews from "../newsInLanding/DisplayNews";
 import DisplayEvents from "../eventsInLanding/DisplayEvents";
+import LinksImportantes from "./LinksImportantes";
 
 import crespo1 from "../../img/crespo1.jpg";
 import crespo2 from "../../img/crespo2.jpeg";
@@ -49,6 +50,7 @@ const Landing = () => {
       <Iconsbar />
       <DisplayNews />
       <DisplayEvents />
+      <LinksImportantes />
     </div>
   );
 };
