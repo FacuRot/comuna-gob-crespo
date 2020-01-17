@@ -18,17 +18,7 @@ const LinksImportantes = () => {
       >
         <h2>Links de Interés</h2>
       </section>
-      <section
-        style={{
-          width: "90%",
-          display: "flex",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          marginLeft: "5%",
-          paddingTop: "15px",
-          paddingBottom: "15px"
-        }}
-      >
+      <section className="linksImportantes">
         <section style={{ display: "flex", flexDirection: "column" }}>
           <h3>Bancos</h3>
 
