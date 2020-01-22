@@ -37,7 +37,7 @@ const Iconsbar = () => {
         <section>
           <img src={Convocatorias} alt="Convocatorias" className="icon" />
           <p>
-            <strong>CONVOCATORIAS</strong>
+            <strong>PROGRAMAS ESTUDIANTILES</strong>
           </p>
         </section>
       </Link>
