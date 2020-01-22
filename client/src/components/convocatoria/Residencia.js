@@ -45,18 +45,19 @@ const Residencia = () => {
             style={{ height: "auto" }}
           />
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
-            maxime debitis magnam provident ab, eum molestias repellendus ex
-            voluptatum rem labore assumenda minima placeat temporibus. Facilis
-            tempore odio culpa. Nobis tempore suscipit repellat, doloribus, ut
-            quos reprehenderit autem fugiat animi sapiente perferendis dolor
-            cupiditate dolorum iusto? Perspiciatis voluptatem quis, placeat
-            quaerat fugiat, necessitatibus assumenda optio ab nostrum enim
-            beatae. Laborum atque nemo, illo, perspiciatis repellat molestiae
-            facilis voluptatibus reiciendis fugit nulla aut amet esse explicabo
-            suscipit beatae exercitationem architecto. Perferendis a quas natus
-            quo suscipit optio ipsam voluptatum perspiciatis consequuntur quidem
-            assumenda, rerum vel, harum fugiat sunt ex autem aliquam.
+            El Programa de Residencias Estudiantiles persigue el propósito de
+            prestar y proporcionar alojamiento a estudiantes que realizan sus
+            estudios en la ciudad de Santa Fe. Responde a la necesidad que
+            manifiestan jóvenes de nuestra localidad en plantearse continuar sus
+            estudios en niveles superiores. La comuna dispone de cuatro
+            departamentos, alquilados; ubicados estratégicamente en zona
+            céntrica de la ciudad de Santa Fe; considerando la accesibilidad en
+            líneas de colectivos y demás servicios. Para acceder y/o conservar
+            el beneficio estudiantil; los residentes deberán cumplir con los
+            requisitos académicos, de comportamiento y de mantenimiento
+            edilicio. A partir de presentación de documentación en tiempo y
+            forma, y entrevistas personales; los becados son evaluados por el
+            equipo a cargo de dicho programa.
           </p>
         </div>
         <div>

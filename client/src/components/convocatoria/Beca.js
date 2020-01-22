@@ -41,18 +41,19 @@ const Beca = () => {
         <div className="tallerItem">
           <img src={beca} alt="Beca Estudiantil" style={{ height: "auto" }} />
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
-            maxime debitis magnam provident ab, eum molestias repellendus ex
-            voluptatum rem labore assumenda minima placeat temporibus. Facilis
-            tempore odio culpa. Nobis tempore suscipit repellat, doloribus, ut
-            quos reprehenderit autem fugiat animi sapiente perferendis dolor
-            cupiditate dolorum iusto? Perspiciatis voluptatem quis, placeat
-            quaerat fugiat, necessitatibus assumenda optio ab nostrum enim
-            beatae. Laborum atque nemo, illo, perspiciatis repellat molestiae
-            facilis voluptatibus reiciendis fugit nulla aut amet esse explicabo
-            suscipit beatae exercitationem architecto. Perferendis a quas natus
-            quo suscipit optio ipsam voluptatum perspiciatis consequuntur quidem
-            assumenda, rerum vel, harum fugiat sunt ex autem aliquam.
+            El sistema de becas económicas está dirigido a estudiantes de
+            carreras superiores que se dictan, en su mayoría, en otras
+            localidades que no sea la Ciudad de Santa Fe. Representa una ayuda
+            económica mensual con cobertura anual de nueve meses consecutivos
+            (desde el mes de Abril al mes de Diciembre). Como población
+            prioritaria está destinada a aquellos estudiantes cuya situación
+            socioeconómica sea considerada vulnerable y/o en proceso de no poder
+            garantizar la continuidad de esos estudios; cada situación es
+            particular y se evalúa como tal. Si bien representa un aporte,
+            quizás insignificante en el proceso educativo; este sistema pretende
+            contemplar como marco referencial, el monto económico que debe
+            cubrir mensualmente, un estudiante, a la ciudad de San Justo,
+            considerando el medio boleto estudiantil.
           </p>
         </div>
         <div>
