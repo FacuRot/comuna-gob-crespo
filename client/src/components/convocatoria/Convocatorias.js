@@ -21,7 +21,7 @@ const Convocatorias = () => {
               fontSize: "2rem"
             }}
           >
-            Convocatorias
+            Programas Estudiantiles
           </h1>
         </section>
       </div>
