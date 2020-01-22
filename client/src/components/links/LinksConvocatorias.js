@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const LinksConvocatorias = () => {
   return (
     <div className="links">
-      <h3 style={{ color: "black" }}>Trámites</h3>
+      <h3 style={{ color: "black" }}>Programas Estudiantiles</h3>
       <Link
         to="/convocatorias/residencia"
         className="btn-info"
