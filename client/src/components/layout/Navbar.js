@@ -87,7 +87,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </Link>
       <Link
         to="/solicitud-alta"
-        style={{ color: "black" }}
+        className="navBarLink"
         onClick={() => {
           setShouldDisplayTramites(!shouldDisplayTramites);
           setShouldDisplayList(!shouldDisplayList);
@@ -97,7 +97,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </Link>
       <Link
         to="/tasa-rural"
-        style={{ color: "black" }}
+        className="navBarLink"
         onClick={() => {
           setShouldDisplayTramites(!shouldDisplayTramites);
           setShouldDisplayList(!shouldDisplayList);
@@ -109,10 +109,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         href="http://gcrespo.boletaweb.com.ar"
         target="_blank"
         rel="noopener noreferrer"
-        style={{
-          color: "black",
-          textDecoration: "none"
-        }}
+        className="navBarLink"
         onClick={() => {
           setShouldDisplayTramites(!shouldDisplayTramites);
           setShouldDisplayList(!shouldDisplayList);
@@ -122,7 +119,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </a>
       <Link
         to="/aranceles"
-        style={{ color: "black" }}
+        className="navBarLink"
         onClick={() => {
           setShouldDisplayTramites(!shouldDisplayTramites);
           setShouldDisplayList(!shouldDisplayList);
@@ -137,7 +134,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <section className="tramites">
       <Link
         to="/comuna"
-        style={{ color: "black" }}
+        className="navBarLink"
         onClick={() => {
           setShouldDisplayComuna(!shouldDisplayComuna);
           setShouldDisplayList(!shouldDisplayList);
@@ -147,7 +144,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </Link>
       <Link
         to="/talleres"
-        style={{ color: "black" }}
+        className="navBarLink"
         onClick={() => {
           setShouldDisplayComuna(!shouldDisplayComuna);
           setShouldDisplayList(!shouldDisplayList);
@@ -157,7 +154,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </Link>
       <Link
         to="/seguridad-vial"
-        style={{ color: "black" }}
+        className="navBarLink"
         onClick={() => {
           setShouldDisplayComuna(!shouldDisplayComuna);
           setShouldDisplayList(!shouldDisplayList);
@@ -167,7 +164,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </Link>
       <Link
         to="/calendar"
-        style={{ color: "black" }}
+        className="navBarLink"
         onClick={() => {
           setShouldDisplayComuna(!shouldDisplayComuna);
           setShouldDisplayList(!shouldDisplayList);
@@ -308,15 +305,12 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       >
         <ul>
           <li>
-            <Link to="/" style={{ color: "black" }}>
+            <Link to="/" className="navBarLink">
               <strong>INICIO</strong>
             </Link>
           </li>
           <li>
-            <span
-              style={{ color: "black" }}
-              onClick={() => setShouldDisplayComuna(!shouldDisplayComuna)}
-            >
+            <span onClick={() => setShouldDisplayComuna(!shouldDisplayComuna)}>
               <strong>COMUNA</strong>{" "}
               <i
                 className={`fas ${
@@ -327,13 +321,12 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             {comuna}
           </li>
           <li>
-            <Link to="/news" style={{ color: "black" }}>
+            <Link to="/news" className="navBarLink">
               <strong>NOTICIAS</strong>
             </Link>
           </li>
           <li>
             <span
-              style={{ color: "black" }}
               onClick={() => setShouldDisplayTramites(!shouldDisplayTramites)}
             >
               <strong>TRAMITES</strong>{" "}
@@ -346,7 +339,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             {tramites}
           </li>
           <li>
-            <Link to="/contacto" style={{ color: "black" }}>
+            <Link to="/contacto" className="navBarLink">
               <strong>CONTACTO</strong>
             </Link>
           </li>
