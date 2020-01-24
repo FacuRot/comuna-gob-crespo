@@ -25,42 +25,42 @@ const LinksImportantes = () => {
           <a
             href="https://www.bna.com.ar/Personas"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             Nación
           </a>
           <a
             href="https://www.macro.com.ar/home-page"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             Macro
           </a>
           <a
             href="https://www.bancosantafe.com.ar/"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             Santa Fe
           </a>
           <a
             href="https://www.bancogalicia.com/"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             Galicia
           </a>
           <a
             href="https://www.bancocredicoop.coop/personas"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             Credicoop
           </a>
           <a
             href="https://www.bbva.com.ar/"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             BBVA Francés
           </a>
@@ -70,35 +70,35 @@ const LinksImportantes = () => {
           <a
             href="https://www.lanacion.com.ar/"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             La Nación
           </a>
           <a
             href="https://www.clarin.com/"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             Clarín
           </a>
           <a
             href="https://www.infobae.com/"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             Info BAE
           </a>
           <a
             href="https://www.ellitoral.com/"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             El Litoral
           </a>
           <a
             href="https://www.larazon.es/tags/argentina/"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             La Razón
           </a>
@@ -109,28 +109,28 @@ const LinksImportantes = () => {
           <a
             href="https://mail.google.com/"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             Gmail
           </a>
           <a
             href="https://mail.yahoo.com"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             Yahoo
           </a>
           <a
             href="https://outlook.live.com/owa/"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             Outlook / Hotmail
           </a>
           <a
             href="https://webmail.arnet.com.ar/"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             Arnet
           </a>
@@ -146,35 +146,35 @@ const LinksImportantes = () => {
           <a
             href="https://www.argentina.gob.ar/"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             Argentina Gob
           </a>
           <a
             href="https://www.santafe.gov.ar/"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             Gobierno de Santa Fe
           </a>
           <a
             href="https://www.afip.gob.ar/"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             AFIP
           </a>
           <a
             href="https://www.anses.gob.ar/"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             ANSES
           </a>
           <a
             href="https://www.argentina.gob.ar/senasa"
             target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
+            className="linkImportante"
           >
             SENASA
           </a>

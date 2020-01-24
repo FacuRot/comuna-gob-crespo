@@ -283,9 +283,11 @@ button {
 #desktopNav ul li {
   padding: 0.45rem;
   margin: 0 0.25rem;
+  color: black;
 }
 
 #desktopNav ul li:hover {
+  color: #4c316d;
   cursor: pointer;
 }
 
@@ -297,6 +299,15 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.navBarLink {
+  color: black;
+  text-decoration: none;
+}
+
+.navBarLink:hover {
+  color: #4c316d;
 }
 
 .tramites {
@@ -529,6 +540,15 @@ table tr td {
   margin-left: 5%;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+
+.linkImportante {
+  text-decoration: none;
+  color: white;
+}
+
+.linkImportante:hover {
+  text-decoration: underline;
 }
 
 /* Mobile Styles */

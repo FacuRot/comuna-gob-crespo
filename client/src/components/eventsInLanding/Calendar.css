@@ -169,3 +169,15 @@ header {
   flex-basis: calc(100% / 7);
   width: calc(100% / 7);
 }
+
+/* Mobile Style */
+@media (max-width: 700px) {
+  .calendar .body .cell {
+    height: 4em;
+    width: 6em;
+  }
+
+  .calendar .body .cell .bg {
+    font-size: 2.5em;
+  }
+}
