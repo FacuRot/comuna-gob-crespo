@@ -1,8 +1,8 @@
 {
   "mongoURI": "mongodb+srv://facu123:facu123@clustercomuna-cgwsp.mongodb.net/test?retryWrites=true&w=majority",
   "jwtSecret": "compumundohipermegared",
-  "awsAccessKey": "AKIAIIIWTVSSIR7CIVRA",
-  "awsSecretAccessKey": "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",
+  "awsAccessKey": "AKIAJUGTWBVO66QXJ4RQ",
+  "awsSecretAccessKey": "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",
   "recaptchaSecretKey": "6LeHY7UUAAAAAChNGD26-DJnk7TBGfJYOFHgOLj0",
   "sendgridApiKey": "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"
 }
