@@ -29,7 +29,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     }
   };
 
-  const getMonthString = month => {
+  const getMonthString = (month) => {
     switch (month) {
       case 0:
         return "Enero";
@@ -127,6 +127,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       >
         Aranceles
       </Link>
+      <a
+        href="https://pagos.asjservicios.com.ar:8092/?E=7503"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="navBarLink"
+        onClick={() => {
+          setShouldDisplayTramites(!shouldDisplayTramites);
+          setShouldDisplayList(!shouldDisplayList);
+        }}
+      >
+        Impuestos
+      </a>
     </section>
   );
 
@@ -246,7 +258,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             display: "flex",
             justifyContent: "flex-end",
             width: "100%",
-            color: "white"
+            color: "white",
           }}
         >
           <p style={{ marginRight: "0.25rem", paddingRight: "0.80rem" }}>
@@ -266,7 +278,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             style={{
               width: "100px",
               height: "auto",
-              marginLeft: "7px"
+              marginLeft: "7px",
             }}
           />
         </Link>
@@ -300,7 +312,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           width: "100%",
           zIndex: "10",
           top: `${top}`,
-          backgroundColor: "#eeeded"
+          backgroundColor: "#eeeded",
         }}
       >
         <ul>
@@ -351,11 +363,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
 Navbar.propTypes = {
   logout: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
-  auth: state.auth
+const mapStateToProps = (state) => ({
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { logout })(Navbar);
