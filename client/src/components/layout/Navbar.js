@@ -245,6 +245,20 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             <strong>CONTACTO</strong>
           </Link>
         </li>
+        <li>
+          <a
+            href="http://www.appcreator24.com/app1077427"
+            target="blank"
+            rel="noopener noreferrer"
+            style={{
+              marginLeft: "0.70rem",
+              color: "black",
+              textDecoration: "none",
+            }}
+          >
+            <strong>HOSPITAL - Registro de viajes</strong>
+          </a>
+        </li>
       </ul>
     </section>
   ) : null;
@@ -283,13 +297,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           />
         </Link>
         <div id="navSocialLinks">
-          <a href="https://www.instagram.com/comunagcrespo" target="blank">
+          <a
+            href="https://www.instagram.com/comunagcrespo"
+            target="blank"
+            rel="noopener noreferrer"
+          >
             <i className="fab fa-instagram fa-2x"></i>
           </a>
 
           <a
             href="https://www.facebook.com/Comuna-de-Gobernador-Crespo-147009232165890/"
             target="blank"
+            rel="noopener noreferrer"
           >
             <i className="fab fa-facebook fa-2x"></i>
           </a>
@@ -315,6 +334,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           backgroundColor: "#eeeded",
         }}
       >
+        <a
+          href="http://www.appcreator24.com/app1077427"
+          target="blank"
+          rel="noopener noreferrer"
+          style={{
+            marginLeft: "0.70rem",
+            color: "black",
+            textDecoration: "none",
+          }}
+        >
+          <strong>HOSPITAL - Registro de viajes</strong>
+        </a>
         <ul>
           <li>
             <Link to="/" className="navBarLink">

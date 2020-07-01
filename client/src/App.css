@@ -273,6 +273,9 @@ button {
 
 #desktopNav {
   background-color: #eeeded;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #desktopNav ul {
