@@ -106,7 +106,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         DREI
       </Link>
       <a
-        href="http://gcrespo.boletaweb.com.ar"
+        href="https://gcrespo.boletaweb.com.ar"
         target="_blank"
         rel="noopener noreferrer"
         className="navBarLink"
