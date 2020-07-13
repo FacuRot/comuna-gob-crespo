@@ -22,7 +22,7 @@ const Links = () => {
         ANSES
       </a>
       <a
-        href="http://gcrespo.boletaweb.com.ar/login/"
+        href="https://gcrespo.boletaweb.com.ar/login/"
         target="blank"
         className="btn-info"
         style={{ backgroundColor: "#0062ae", marginBottom: "5px" }}
