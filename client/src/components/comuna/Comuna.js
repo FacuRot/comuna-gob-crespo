@@ -13,7 +13,7 @@ const Comuna = () => {
             width: "100%",
             display: "flex",
             alignItems: "center",
-            justifyContent: "flex-start"
+            justifyContent: "flex-start",
           }}
         >
           <img
@@ -25,7 +25,7 @@ const Comuna = () => {
           <h1
             style={{
               fontSize: "2rem",
-              color: "white"
+              color: "white",
             }}
           >
             Comuna
@@ -60,7 +60,7 @@ const Comuna = () => {
             </tr>
             <tr>
               <td style={{ color: "grey" }}>ASITENCIA SOCIAL</td>
-              <td>Sra. Gisela Morelli</td>
+              <td>Lic. Gisela Morelli</td>
             </tr>
             <tr>
               <td style={{ color: "grey" }}>SEGURIDAD ALIMENTARIA</td>
@@ -72,19 +72,15 @@ const Comuna = () => {
             </tr>
             <tr>
               <td style={{ color: "grey" }}>ASESORAMIENTO LEGAL</td>
-              <td>Dr. Juan Manuel Nardoni</td>
-            </tr>
-            <tr>
-              <td style={{ color: "grey" }}>JUZGADO DE FALTAS</td>
               <td>Dra. Melina Cuatrín</td>
             </tr>
             <tr>
-              <td style={{ color: "grey" }}>PRENSA Y COMUNICACIÓN</td>
-              <td>Sr. Valiente Alejandro</td>
+              <td style={{ color: "grey" }}>JUZGADO DE FALTAS</td>
+              <td>Dr. Juan Manuel Nardoni</td>
             </tr>
             <tr>
               <td style={{ color: "grey" }}>CULTURA</td>
-              <td>Sra. Milesi Nerina</td>
+              <td>Sra. Spinetta, Danisa</td>
             </tr>
           </table>
         </div>

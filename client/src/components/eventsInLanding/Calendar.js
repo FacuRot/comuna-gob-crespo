@@ -21,7 +21,7 @@ const CalendarComponent = ({
   getEvents,
   eraseEvent,
   events: { loading, eventsArray },
-  auth: { isAuthenticated }
+  auth: { isAuthenticated },
 }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [fechasTabla, setFechasTabla] = useState([]);
@@ -39,13 +39,13 @@ const CalendarComponent = ({
     return setEmptyArray();
   });
 
-  const deleteEvent = id => {
+  const deleteEvent = (id) => {
     eraseEvent(id);
     getEvents();
   };
 
   if (!loading || eventsArray !== null) {
-    eventsArray.map(event => {
+    eventsArray.map((event) => {
       var fechaEvento = new Date(event.date);
       fechaEvento.setHours(0);
       fechaEvento.setDate(fechaEvento.getDate() + 1);
@@ -54,9 +54,9 @@ const CalendarComponent = ({
     });
   }
 
-  const checkForEventToDisplay = fecha => {
+  const checkForEventToDisplay = (fecha) => {
     if (!loading || eventsArray !== null) {
-      eventsArray.map(event => {
+      eventsArray.map((event) => {
         var fechaEvento = new Date(event.date);
         fechaEvento.setHours(0);
         fechaEvento.setDate(fechaEvento.getDate() + 1);
@@ -87,7 +87,7 @@ const CalendarComponent = ({
           style={{
             display: "flex",
             justifyContent: "center",
-            alignItems: "center"
+            alignItems: "center",
           }}
         >
           chevron_left
@@ -103,7 +103,7 @@ const CalendarComponent = ({
           style={{
             display: "flex",
             justifyContent: "center",
-            alignItems: "center"
+            alignItems: "center",
           }}
         >
           chevron_right
@@ -125,7 +125,7 @@ const CalendarComponent = ({
             display: "flex",
             justifyContent: "center",
             color: "white",
-            backgroundColor: "#4c316d"
+            backgroundColor: "#4c316d",
           }}
         >
           {format(addDays(startDate, i), dateFormat, { locale: es })}
@@ -190,20 +190,17 @@ const CalendarComponent = ({
     return <div className="body">{rows}</div>;
   };
 
-  const content =
-    arregloEventos.length === 0 ? (
-      <p>Cargando Contenido...</p>
-    ) : (
+  const content = (
+    <div>
       <div>
-        <div>
-          <div className="calendar">
-            <div>{header()}</div>
-            <div>{daysOfWeek()}</div>
-            <div>{cells()}</div>
-          </div>
+        <div className="calendar">
+          <div>{header()}</div>
+          <div>{daysOfWeek()}</div>
+          <div>{cells()}</div>
         </div>
       </div>
-    );
+    </div>
+  );
 
   return (
     <div>
@@ -215,7 +212,7 @@ const CalendarComponent = ({
             width: "100%",
             display: "flex",
             alignItems: "center",
-            justifyContent: "flex-start"
+            justifyContent: "flex-start",
           }}
         >
           <img
@@ -225,13 +222,13 @@ const CalendarComponent = ({
             style={{
               width: "3rem",
               height: "auto",
-              marginRight: "1rem"
+              marginRight: "1rem",
             }}
           />
           <h1
             style={{
               fontSize: "2rem",
-              color: "white"
+              color: "white",
             }}
           >
             Agenda de Actividades
@@ -244,7 +241,7 @@ const CalendarComponent = ({
           style={{
             display: "flex",
             flexDirection: "column",
-            marginBottom: "2rem"
+            marginBottom: "2rem",
           }}
         >
           {fechasTabla.map((evento, i) => (
@@ -256,7 +253,7 @@ const CalendarComponent = ({
                 backgroundColor: `${i % 2 !== 0 ? "#eeeded" : ""}`,
                 borderStyle: "solid",
                 borderWidth: "0.5px 1px 0.5px 1px",
-                borderColor: "grey"
+                borderColor: "grey",
               }}
             >
               <p style={{ color: "red" }}>
@@ -276,16 +273,16 @@ const CalendarComponent = ({
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   events: state.events,
-  auth: state.auth
+  auth: state.auth,
 });
 
 CalendarComponent.propTypes = {
   auth: PropTypes.object.isRequired,
   events: PropTypes.object.isRequired,
   getEvents: PropTypes.func.isRequired,
-  eraseEvent: PropTypes.func.isRequired
+  eraseEvent: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, { getEvents, eraseEvent })(
