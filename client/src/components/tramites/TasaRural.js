@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import LinksVial from "../links/LinksVial";
 import pdfRegistroInspeccion from "../../contenido descargable/SOLICITUD DE INSCRIPCION REG E INSPSC..pdf";
+import pdfOrdenanza537 from "../../contenido descargable/Ordenanza 537-2021.pdf";
 
 const TasaRural = () => (
   <div>
@@ -13,7 +14,7 @@ const TasaRural = () => (
           alignItems: "center",
           justifyContent: "flex-start",
           paddingLeft: "5rem",
-          color: "white"
+          color: "white",
         }}
       >
         <h1 id="derechoRegistroInspeccion">Derecho de Registro e Inspección</h1>
@@ -21,6 +22,16 @@ const TasaRural = () => (
     </div>
     <div className="news-container">
       <div id="licenciaConducirDiv">
+        <h3>Ordenanza 537-2021</h3>
+        <a
+          href={pdfOrdenanza537}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-light"
+          style={{ marginBottom: "2rem" }}
+        >
+          Descargar
+        </a>
         <h3>Solicitud de Alta</h3>
         <p>Descargar formulario:</p>
         <a
