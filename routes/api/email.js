@@ -6,18 +6,14 @@ const request = require("request");
 const sgMail = require("@sendgrid/mail");
 
 router.post(
-  "/",
+  "/contact",
   [
-    check("name", "Ingrese su nombre")
-      .not()
-      .isEmpty(),
+    check("name", "Ingrese su nombre").not().isEmpty(),
     check("email", "Ingrese un email valido").isEmail(),
     check("email", "Ingrese su direccion de correo electronico")
       .not()
       .isEmpty(),
-    check("text", "El mensaje no puede estar vacío")
-      .not()
-      .isEmpty()
+    check("text", "El mensaje no puede estar vacío").not().isEmpty(),
   ],
   (req, res) => {
     const errors = validationResult(req);
@@ -57,7 +53,7 @@ router.post(
           from: `${email}`,
           subject:
             "Email enviado desde la plataforma de la Comuna de Gdor. Crespo",
-          text: `Este mensaje fue escrito por ${name} \n Mensaje: ${text}`
+          text: `Este mensaje fue escrito por ${name} \n Mensaje: ${text}`,
         };
         sgMail.send(msg);
         return res.status(200).json({ msg: "Captcha Exitoso" });
@@ -65,6 +61,68 @@ router.post(
     } catch (err) {
       console.log(err.message);
       res.status(500).send("Ocurrio un error intentelo de nuevo más tarde.");
+    }
+  }
+);
+
+router.post(
+  "/taller",
+  [
+    check("nombre", "El nombre no puede estar vacío").not().isEmpty(),
+    check("dni", "El DNI no puede estar vacío").not().isEmpty(),
+    check("edad", "La edad no puede estar vacía").not().isEmpty(),
+    check("direccion", "La dirección no puede estar vacía").not().isEmpty(),
+    check("telefono", "El telefono no puede estar vacío").not().isEmpty(),
+    check("emailAdulto", "El email no puede estar vacío").not().isEmpty(),
+    check("emailAdulto", "Ingresá una dirección de mail válida").isEmail(),
+  ],
+  (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+      const {
+        taller,
+        nombre,
+        dni,
+        edad,
+        direccion,
+        telefono,
+        emailAdulto,
+        nombreAdulto,
+        dniAdulto,
+        direccionAdulto,
+        telefonoAdulto,
+      } = req.body;
+
+      sgMail.setApiKey(config.get("sendgridApiKey"));
+      const msg = {
+        to: `secculturagcrespo@gmail.com`,
+        from: `facu_rot@hotmail.com`,
+        subject: `Inscripción taller ${taller}`,
+        text: `
+                Taller: ${taller} \n
+                Nombre y apellido: ${nombre} \n 
+                DNI: ${dni} \n
+                Edad: ${edad} \n
+                Dirección: ${direccion} \n
+                Telefono: ${telefono} \n
+                Email adulto: ${emailAdulto} \n
+                Nombre adulto: ${nombreAdulto} \n
+                DNI adulto: ${dniAdulto} \n
+                Dirección adulto: ${direccionAdulto} \n
+                Telefono adulto: ${telefonoAdulto}`,
+      };
+      sgMail.send(msg);
+
+      return res.status(200).send("success");
+    } catch (error) {
+      console.error(error.message);
+      return res
+        .status(500)
+        .send("Ocurrio un error, intentelo de nuevo mas tarde.");
     }
   }
 );

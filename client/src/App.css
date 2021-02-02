@@ -205,6 +205,11 @@ img {
   color: #fff;
 }
 
+.alert-success {
+  background: var(--success-color);
+  color: #fff;
+}
+
 /* Forms */
 .form .form-group {
   margin: 1.2rem 0;
