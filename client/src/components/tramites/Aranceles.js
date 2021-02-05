@@ -12,12 +12,12 @@ const Aranceles = () => {
             alignItems: "center",
             justifyContent: "flex-start",
             paddingLeft: "5rem",
-            color: "white"
+            color: "white",
           }}
         >
           <h1
             style={{
-              fontSize: "40px"
+              fontSize: "40px",
             }}
           >
             Aranceles
@@ -28,10 +28,10 @@ const Aranceles = () => {
         <div id="licenciaConducirDiv">
           <h2>Aranceles</h2>
           <ul>
-            <li>Tramite Urgente $1000</li>
-            <li>Certificado de Obra $1000</li>
-            <li>Tramite Administrativo $400</li>
-            <li>Visación Plano $400</li>
+            <li>Tramite Urgente $1350</li>
+            <li>Certificado de Obra $1350</li>
+            <li>Tramite Administrativo $500</li>
+            <li>Visación Plano $500</li>
           </ul>
         </div>
         <div>
