@@ -120,13 +120,16 @@ const TallerItem = ({
               />
 
               <p>{tallerItem.description}</p>
-              <p style={{ marginTop: "1rem" }}>
+              <p style={{ display: "none", marginTop: "1rem" }}>
                 <strong>
                   Tenes ganas de sumarte a este taller? Inscribite.
                 </strong>
               </p>
-              <Alert />
-              <form className="form" onSubmit={(e) => onSubmit(e)}>
+              <form
+                className="form"
+                onSubmit={(e) => onSubmit(e)}
+                style={{ display: "none" }}
+              >
                 <div className="form-group">
                   <input
                     type="text"
