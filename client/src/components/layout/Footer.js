@@ -1,5 +1,5 @@
 import React from "react";
-import LogoComuna from "../../img/logocomuna-02.png";
+import LogoComuna from "../../img/logo-GC-2021.png";
 
 const Footer = () => {
   return (
@@ -13,7 +13,7 @@ const Footer = () => {
             style={{
               display: "flex",
               alignItems: "center",
-              marginLeft: "10px"
+              marginLeft: "10px",
             }}
           >
             <i className="fas fa-map-marker-alt" style={{ color: "black" }} />
@@ -25,7 +25,7 @@ const Footer = () => {
             style={{
               display: "flex",
               alignItems: "center",
-              marginLeft: "10px"
+              marginLeft: "10px",
             }}
           >
             <i className="fas fa-phone-alt" style={{ color: "black" }} />
