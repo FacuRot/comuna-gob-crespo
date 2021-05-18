@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { logout } from "../../actions/auth";
-import Logo from "../../img/logocomuna-02.png";
+import Logo from "../../img/logo-GC-2021.png";
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   useEffect(() => {
@@ -290,7 +290,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             src={Logo}
             alt="Logo Comuna"
             style={{
-              width: "100px",
+              width: "120px",
               height: "auto",
               marginLeft: "7px",
             }}
