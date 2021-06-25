@@ -25,6 +25,7 @@ import Convocatorias from "./components/convocatoria/Convocatorias";
 import Residencia from "./components/convocatoria/Residencia";
 import Beca from "./components/convocatoria/Beca";
 import CalendarComponent from "./components/eventsInLanding/Calendar";
+import ViviendaLotePropio from "./components/tramites/ViviendaLotePropio";
 // Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -91,6 +92,7 @@ const App = () => {
               />
               <Route exact path="/convocatorias/beca" component={Beca} />
               <Route exact path="/calendar" component={CalendarComponent} />
+              <Route exact path="/vivienda" component={ViviendaLotePropio} />
             </Switch>
           </section>
           <Footer />

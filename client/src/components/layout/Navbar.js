@@ -76,8 +76,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const tramites = shouldDisplayTramites && (
     <section className="tramites">
       <Link
+        to="/vivienda"
+        className="navBarLink"
+        onClick={() => {
+          setShouldDisplayTramites(!shouldDisplayTramites);
+          setShouldDisplayList(!shouldDisplayList);
+        }}
+      >
+        Vivienda en lote propio
+      </Link>
+      <Link
         to="/licencia-conducir"
-        style={{ color: "black" }}
+        className="navBarLink"
         onClick={() => {
           setShouldDisplayTramites(!shouldDisplayTramites);
           setShouldDisplayList(!shouldDisplayList);

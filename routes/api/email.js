@@ -46,7 +46,6 @@ router.post(
         }
 
         // If successful
-        console.log(email);
         sgMail.setApiKey(config.get("sendgridApiKey"));
         const msg = {
           to: "comunagcrespo@yahoo.com.ar",
