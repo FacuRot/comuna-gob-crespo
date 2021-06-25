@@ -124,7 +124,7 @@ const ViviendaLotePropio = ({ viviendaLotePropio }) => {
             <input
               type="text"
               name="name"
-              placeholder="Juan Perez"
+              placeholder="Juan Rodríguez"
               value={name}
               onChange={(e) => onChange(e)}
             />
@@ -209,7 +209,7 @@ const ViviendaLotePropio = ({ viviendaLotePropio }) => {
             <input
               type="text"
               name="nameMiembro"
-              placeholder="Daniel Perez"
+              placeholder="Daniel Rodríguez"
               value={nameMiembro}
               onChange={(e) => onChangeMiembros(e)}
             />
