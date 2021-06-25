@@ -17,6 +17,7 @@ app.use("/api/posts", require("./routes/api/posts"));
 app.use("/api/events", require("./routes/api/events"));
 app.use("/api/email", require("./routes/api/email"));
 app.use("/api/talleres", require("./routes/api/talleres"));
+app.use("/api/vivienda", require("./routes/api/vivienda"));
 
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {
