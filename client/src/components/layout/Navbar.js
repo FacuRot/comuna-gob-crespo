@@ -76,16 +76,6 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const tramites = shouldDisplayTramites && (
     <section className="tramites">
       <Link
-        to="/vivienda"
-        className="navBarLink"
-        onClick={() => {
-          setShouldDisplayTramites(!shouldDisplayTramites);
-          setShouldDisplayList(!shouldDisplayList);
-        }}
-      >
-        Vivienda en lote propio
-      </Link>
-      <Link
         to="/licencia-conducir"
         className="navBarLink"
         onClick={() => {
@@ -173,6 +163,16 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         }}
       >
         Talleres
+      </Link>
+      <Link
+        to="/nino-arbol"
+        className="navBarLink"
+        onClick={() => {
+          setShouldDisplayComuna(!shouldDisplayComuna);
+          setShouldDisplayList(!shouldDisplayList);
+        }}
+      >
+        Un niño, un árbol
       </Link>
       <Link
         to="/seguridad-vial"

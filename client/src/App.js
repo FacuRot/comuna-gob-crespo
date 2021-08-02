@@ -26,6 +26,7 @@ import Residencia from "./components/convocatoria/Residencia";
 import Beca from "./components/convocatoria/Beca";
 import CalendarComponent from "./components/eventsInLanding/Calendar";
 import ViviendaLotePropio from "./components/tramites/ViviendaLotePropio";
+import NinoArbol from "./components/comuna/NinoArbol";
 // Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -92,7 +93,8 @@ const App = () => {
               />
               <Route exact path="/convocatorias/beca" component={Beca} />
               <Route exact path="/calendar" component={CalendarComponent} />
-              <Route exact path="/vivienda" component={ViviendaLotePropio} />
+              {/*<Route exact path="/vivienda" component={ViviendaLotePropio} />*/}
+              <Route exact path="/nino-arbol" component={NinoArbol} />
             </Switch>
           </section>
           <Footer />
