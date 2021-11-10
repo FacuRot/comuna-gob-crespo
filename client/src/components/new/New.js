@@ -13,13 +13,14 @@ const New = ({
   news: { newItem, loading },
   match,
   auth: { isAuthenticated },
-  history
+  location,
+  history,
 }) => {
   useEffect(() => {
     getNewById(match.params.id);
   }, [getNewById, match]);
 
-  const deleteAndRedirect = id => {
+  const deleteAndRedirect = (id) => {
     deleteNew(id, history);
   };
 
@@ -33,7 +34,7 @@ const New = ({
             width: "100%",
             display: "flex",
             alignItems: "center",
-            justifyContent: "flex-start"
+            justifyContent: "flex-start",
           }}
         >
           <img
@@ -45,7 +46,7 @@ const New = ({
           <h1
             style={{
               fontSize: "2rem",
-              color: "white"
+              color: "white",
             }}
           >
             NOTICIAS
@@ -59,7 +60,7 @@ const New = ({
           <div
             style={{
               display: "flex",
-              flexDirection: "column"
+              flexDirection: "column",
             }}
           >
             <p className="small NoticiaIndividual" style={{ color: "grey" }}>
@@ -87,6 +88,15 @@ const New = ({
             >
               Fuente: {newItem.font}
             </p>
+            <a
+              href={`https://wa.me/?text=${window.location.href}`}
+              data-action="share/whatsapp/share"
+              target="_blank"
+              className="btn btn-light"
+              style={{ marginTop: "20px" }}
+            >
+              Compartir esta noticia
+            </a>
             {isAuthenticated && (
               <section>
                 <Link
@@ -117,12 +127,12 @@ New.propTypes = {
   news: PropTypes.object.isRequired,
   getNewById: PropTypes.func.isRequired,
   deleteNew: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   news: state.news,
-  auth: state.auth
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { getNewById, deleteNew })(New);
