@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import LinksVial from "../links/LinksVial";
 import pdfRegistroInspeccion from "../../contenido descargable/SOLICITUD DE INSCRIPCION REG E INSPSC..pdf";
 import pdfOrdenanza537 from "../../contenido descargable/Ordenanza 537-2021.pdf";
+import pdfOrdenanza538 from "../../contenido descargable/ORDENANZA TRIBUTARIA 578-2022.pdf";
 
 const TasaRural = () => (
   <div>
@@ -25,6 +26,16 @@ const TasaRural = () => (
         <h3>Ordenanza 537-2021</h3>
         <a
           href={pdfOrdenanza537}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-light"
+          style={{ marginBottom: "2rem" }}
+        >
+          Descargar
+        </a>
+        <h3>Ordenanza 538-2022</h3>
+        <a
+          href={pdfOrdenanza538}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-light"
