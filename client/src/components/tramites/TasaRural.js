@@ -23,9 +23,9 @@ const TasaRural = () => (
     </div>
     <div className="news-container">
       <div id="licenciaConducirDiv">
-        <h3>Ordenanza 537-2021</h3>
+        <h3>Ordenanza 538-2022</h3>
         <a
-          href={pdfOrdenanza537}
+          href={pdfOrdenanza538}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-light"
@@ -33,9 +33,9 @@ const TasaRural = () => (
         >
           Descargar
         </a>
-        <h3>Ordenanza 538-2022</h3>
+        <h3>Ordenanza 537-2021</h3>
         <a
-          href={pdfOrdenanza538}
+          href={pdfOrdenanza537}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-light"
