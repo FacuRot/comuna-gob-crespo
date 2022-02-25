@@ -101,6 +101,7 @@ const TallerItem = ({
         direccionAdulto: "",
         telefonoAdulto: "",
       });
+      window.alert("Tu inscripción fue exitosa.");
     }
 
     window.scrollTo(0, 500);
@@ -148,7 +149,6 @@ const TallerItem = ({
                       Tenes ganas de sumarte a este taller? Inscribite.
                     </strong>
                   </p>
-                  {/*
                   <form className="form" onSubmit={(e) => onSubmit(e)}>
                     <div className="form-group">
                       <input
@@ -252,7 +252,6 @@ const TallerItem = ({
                     </div>
                     <input type="submit" value="Inscribirme" className="btn" />
                   </form>
-                  */}
                 </div>
               <p style={{ marginTop: "1rem" }}>
                 <strong>Queres saber más? Contactate con nosotros.</strong>
