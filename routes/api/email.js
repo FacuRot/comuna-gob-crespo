@@ -98,7 +98,7 @@ router.post(
 
       sgMail.setApiKey(config.get("sendgridApiKey"));
       const msg = {
-        to: `facurot1@gmail.com`,  //secculturagcrespo@gmail.com
+        to: `secculturagcrespo@gmail.com`,
         from: `facu_rot@hotmail.com`,
         subject: `Inscripción taller ${taller}`,
         text: `
