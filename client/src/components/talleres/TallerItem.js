@@ -44,6 +44,28 @@ const TallerItem = ({
     telefonoAdulto,
   } = formData;
 
+  const [minMaxEdad, setMinMaxEdad] = useState({
+    minEdad: 0,
+    maxEdad: 1000
+  });
+
+  useEffect(() => {
+    if (tallerItem !== null) {
+      console.log(tallerItem.name);
+      switch(tallerItem.name) {
+        case "Taller comunal de ajedrez":
+          return setMinMaxEdad({minEdad: 8, maxEdad: 1000});
+        case "Coro":
+          return setMinMaxEdad({minEdad: 12, maxEdad: 1000});
+        case "Taller comunal de teatro":
+          return setMinMaxEdad({minEdad: 6, maxEdad: 1000});
+        default:
+          return setMinMaxEdad({minEdad: 0, maxEdad: 1000});
+      }
+    }
+  }, [tallerItem]);
+
+
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -120,13 +142,13 @@ const TallerItem = ({
               />
 
               <p>{tallerItem.description}</p>
-              {tallerItem.name === "Taller comunal de teatro" && (
                 <div>
                   <p style={{ marginTop: "1rem" }}>
                     <strong>
                       Tenes ganas de sumarte a este taller? Inscribite.
                     </strong>
                   </p>
+                  {/*
                   <form className="form" onSubmit={(e) => onSubmit(e)}>
                     <div className="form-group">
                       <input
@@ -148,9 +170,11 @@ const TallerItem = ({
                     </div>
                     <div className="form-group">
                       <input
-                        type="text"
+                        type="number"
                         name="edad"
                         value={edad}
+                        min={minMaxEdad.minEdad}
+                        max={minMaxEdad.maxEdad}
                         onChange={(e) => onChange(e)}
                         placeholder="Edad"
                       />
@@ -228,8 +252,8 @@ const TallerItem = ({
                     </div>
                     <input type="submit" value="Inscribirme" className="btn" />
                   </form>
+                  */}
                 </div>
-              )}
               <p style={{ marginTop: "1rem" }}>
                 <strong>Queres saber más? Contactate con nosotros.</strong>
               </p>
