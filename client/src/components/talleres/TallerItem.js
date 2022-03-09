@@ -46,25 +46,24 @@ const TallerItem = ({
 
   const [minMaxEdad, setMinMaxEdad] = useState({
     minEdad: 0,
-    maxEdad: 1000
+    maxEdad: 1000,
   });
 
   useEffect(() => {
     if (tallerItem !== null) {
       console.log(tallerItem.name);
-      switch(tallerItem.name) {
+      switch (tallerItem.name) {
         case "Taller comunal de ajedrez":
-          return setMinMaxEdad({minEdad: 8, maxEdad: 1000});
+          return setMinMaxEdad({ minEdad: 8, maxEdad: 1000 });
         case "Coro":
-          return setMinMaxEdad({minEdad: 12, maxEdad: 1000});
+          return setMinMaxEdad({ minEdad: 12, maxEdad: 1000 });
         case "Taller comunal de teatro":
-          return setMinMaxEdad({minEdad: 6, maxEdad: 1000});
+          return setMinMaxEdad({ minEdad: 6, maxEdad: 1000 });
         default:
-          return setMinMaxEdad({minEdad: 0, maxEdad: 1000});
+          return setMinMaxEdad({ minEdad: 0, maxEdad: 1000 });
       }
     }
   }, [tallerItem]);
-
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -143,6 +142,7 @@ const TallerItem = ({
               />
 
               <p>{tallerItem.description}</p>
+              {/*
                 <div>
                   <p style={{ marginTop: "1rem" }}>
                     <strong>
@@ -253,6 +253,7 @@ const TallerItem = ({
                     <input type="submit" value="Inscribirme" className="btn" />
                   </form>
                 </div>
+              */}
               <p style={{ marginTop: "1rem" }}>
                 <strong>Queres saber más? Contactate con nosotros.</strong>
               </p>
