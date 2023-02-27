@@ -75,7 +75,7 @@ router.post(
     check("emailAdulto", "El email no puede estar vacío").not().isEmpty(),
     check("emailAdulto", "Ingresá una dirección de mail válida").isEmail(),
   ],
-  (req, res) => {
+  async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -114,7 +114,7 @@ router.post(
                 Dirección adulto: ${direccionAdulto} \n
                 Telefono adulto: ${telefonoAdulto}`,
       };
-      sgMail.send(msg);
+      const sent = await sgMail.send(msg);
 
       return res.status(200).send("success");
     } catch (error) {
