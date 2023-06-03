@@ -143,7 +143,7 @@ const TallerItem = ({
 
               <p>{tallerItem.description}</p>
 
-              <div>
+              {/*<div>
                 <p style={{ marginTop: "1rem" }}>
                   <strong>
                     Tenes ganas de sumarte a este taller? Inscribite.
@@ -252,7 +252,7 @@ const TallerItem = ({
                   </div>
                   <input type="submit" value="Inscribirme" className="btn" />
                 </form>
-              </div>
+              </div>*/}
 
               <p style={{ marginTop: "1rem" }}>
                 <strong>Queres saber más? Contactate con nosotros.</strong>
