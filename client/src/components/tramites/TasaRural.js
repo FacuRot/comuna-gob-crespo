@@ -5,6 +5,7 @@ import pdfRegistroInspeccion from "../../contenido descargable/SOLICITUD DE INSC
 import pdfOrdenanza537 from "../../contenido descargable/Ordenanza 537-2021.pdf";
 import pdfOrdenanza538 from "../../contenido descargable/ORDENANZA TRIBUTARIA 578-2022.pdf";
 import pdfOrdenanza607 from "../../contenido descargable/Ordenanza Tributaria 2023 (1).pdf";
+import pdfOrdenanza639 from "../../contenido descargable/ORDENANZA TRIBUTARIA 639-2024.pdf";
 
 const TasaRural = () => (
   <div>
@@ -24,6 +25,16 @@ const TasaRural = () => (
     </div>
     <div className="news-container">
       <div id="licenciaConducirDiv">
+        <h3>Ordenanza 639-2024</h3>
+        <a
+          href={pdfOrdenanza639}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-light"
+          style={{ marginBottom: "2rem" }}
+        >
+          Descargar
+        </a>
         <h3>Ordenanza 607-2023</h3>
         <a
           href={pdfOrdenanza607}

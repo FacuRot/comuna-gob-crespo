@@ -52,7 +52,7 @@ const Comuna = () => {
             </tr>
             <tr>
               <td style={{ color: "grey" }}>SECRETARIO</td>
-              <td>Baroni, Pablo Luis Maria</td>
+              <td>Cuatrin, Melina Guadalupe</td>
             </tr>
             <tr>
               <td style={{ color: "grey" }}>VOCAL</td>
@@ -80,7 +80,7 @@ const Comuna = () => {
             </tr>
             <tr>
               <td style={{ color: "grey" }}>CULTURA</td>
-              <td>Sra. Spinetta, Danisa</td>
+              <td>Ceschi, Marianela</td>
             </tr>
           </table>
         </div>
